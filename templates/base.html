@@ -1,0 +1,131 @@
+{% load static %}
+{% load crispy_forms_tags %}
+{% load compress %}
+{% url 'home' as home_url %}
+{% url 'img_detail' img.slug as img_detail_url %}
+{% url 'login' as login_url %}
+{% url 'logout' as logout_url %}
+{% url 'register' as register_url %}
+{% url 'my_favourites' as my_favourites %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Character cafe featuring cute characters">
+    <meta name="keywords" content="character cafe, cute characters, merchandise">
+    <title>{% block title %}FriendCurate{% endblock %}</title>
+    {% load static %}
+
+    <link rel="icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- css-->
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% endcompress %}
+    <!-- google fonts css -->
+
+
+    <!-- Font Awesome CSS -->
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container-fluid d-flex justify-content-between align-items-center" id="header">
+            <a class="navbar-brand" href="/">CharaCafe</a>
+
+            <button class="navbar-toggler ms-auto align-self-center" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a class="btn btn-primary" role="button" href="{% url 'submit' %}"
+                        aria-disabled="true">Submit Image</a></li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+                {% if user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                <a href="" class="dropdown-item">Product Management</a>
+                {% endif %}
+
+                <li class="nav-item"><a class="nav-link" href="{% url 'profile' user.id %}"
+                        id="username">{{user.username}}</a></li>
+                <li class="nav-item dropdown" id="profile-dropdown">
+                    <a href="{% url 'profile' user.id %}" class="nav-link dropdown-toggle avatar-dropdown"
+                        data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                        {% if user.profile.avatar %}
+                        <img class="navbar-icon" loading="lazy" id="navbar-avatar" src="{{user.profile.avatar.url}}"
+                            style="height:70px;">
+                        {% else %}
+                        <img src="media/profile_pics/default.jpg" alt="Default Avatar" loading="lazy" id="navbar-avatar"
+                            style="height:70px;">
+                        {% endif %}
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item" href="{% url 'profile' user.id %}">Profile</a>
+                            <a class="dropdown-item" href="{% url 'my_favourites' %}">Favourites</a>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                        </div>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="text-center footer">
+        <div class="container">
+            <div class="row">
+                <p class="col-12 col-md-4 mb-3 mb-md-0 text-center">
+                    {% block copyright %} CharaCafe | Made by AM{% endblock copyright %}
+                </p>
+                <p class="col-12 col-md-4 mb-3 mb-md-0 text-center">Follow us:
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook-square ms-3"></i></a>
+                    <a href="https://www.x.com"><i class="fab fa-twitter-square ms-3"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram-square ms-3"></i></a>
+                    <a href="https://www.youtube.com"><i class="fab fa-youtube-square ms-3"></i></a>
+                </p>
+                <div class="w-100 d-md-none"></div>
+                <div class="col-12 col-md-4 text-center"><i class="far fa-bell"></i>
+                    <p> Subscribe to Our Weekly Newsletter:</p>
+
+                    <form method="post" action="{% url 'subscribe' %}">
+                        {% csrf_token %}
+                        {{ footer_subscribe_form|crispy }}
+                        <button type="submit" class="btn btn-outline-secondary" id="newsletterbutton">Subscribe</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+</body>
+
+</html>
