@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% if not user.is_authenticated %}
+<h3 id="cta"> Welcome to Friendcurate. Join a thriving community of artists and art lovers alike <a href="">today.</a>
+</h3>
+{% endif %}
+<!-- hero image -->
+<section id="hero-image-outer">
+    <div id="hero-image">
+        <link rel="preload" href="" as="image">
+    </div>
+    <div id="cover-text">
+        <h2>Characafe</h2>
+        <p>Eat delicious food inspired by our range of cute characters and meet our mascots!</p>
+    </div>
+
+</section>
+<section class="menu">
+
+</section>
+<section id="location">
+
+</section>
+{% endblock %}
