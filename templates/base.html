@@ -14,7 +14,7 @@
     <meta name="description" content="Character cafe featuring cute characters">
     <meta name="keywords" content="character cafe, cute characters, merchandise">
     <title>{% block title %}Characafe{% endblock %}</title>
-    {% load static %}
+
 
     <link rel="icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
     <!-- bootstrap css -->
@@ -24,12 +24,13 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
     <!-- google fonts css -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comic+Relief&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief&family=Nanum+Pen+Script&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome CSS -->
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
 
@@ -37,7 +38,7 @@
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container-fluid" id="header">
             <img src="../media/characafelogo.png" alt="logo for characafe">
-            <a class="navbar-brand" href="/">CharaCafe</a>
+            <a class="navbar-brand" id="nav-title" href="/">CharaCafe</a>
 
             <button class="navbar-toggler ms-auto align-self-center" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -55,41 +56,41 @@
                     </li>
 
 
-                {% if user.is_authenticated %}
-                {% if request.user.is_superuser %}
-                <li class="nav-item"><a href="" class="nav-link">Product Management</a>
+                    {% if user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                    <li class="nav-item"><a href="" class="nav-link">Product Management</a>
                     </li>
-                {% endif %}
+                    {% endif %}
                 </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="" id="username">{{user.username}}</a></li>
-                <li class="nav-item dropdown" id="profile-dropdown">
-                    <a href="" class="nav-link dropdown-toggle avatar-dropdown" data-bs-toggle="dropdown" role="button"
-                        aria-expanded="false">
-                        {% if user.profile.avatar %}
-                        <img class="navbar-icon" loading="lazy" id="navbar-avatar" src="{{user.profile.avatar.url}}"
-                            style="height:70px;">
-                        {% else %}
-                        <img src="media/profile_pics/default.jpg" alt="Default Avatar" loading="lazy" id="navbar-avatar"
-                            style="height:70px;">
-                        {% endif %}
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="">Profile</a>
-                            <a class="dropdown-item" href="">WishList</a>
-                            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
-                        </div>
-                </li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                </li>
-                {% endif %}
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="" id="username">{{user.username}}</a></li>
+                    <li class="nav-item dropdown" id="profile-dropdown">
+                        <a href="" class="nav-link dropdown-toggle avatar-dropdown" data-bs-toggle="dropdown"
+                            role="button" aria-expanded="false">
+                            {% if user.profile.avatar %}
+                            <img class="navbar-icon" loading="lazy" id="navbar-avatar" src="{{user.profile.avatar.url}}"
+                                style="height:70px;">
+                            {% else %}
+                            <img src="media/profile_pics/default.jpg" alt="Default Avatar" loading="lazy"
+                                id="navbar-avatar" style="height:70px;">
+                            {% endif %}
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="">Profile</a>
+                                <a class="dropdown-item" href="">WishList</a>
+                                <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                            </div>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    {% endif %}
 
-            </ul>
-        </div>
+                </ul>
+            </div>
         </div>
     </nav>
     <div class="container mt-4">

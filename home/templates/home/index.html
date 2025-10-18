@@ -9,16 +9,69 @@
 <!-- hero image -->
 <section id="hero-image-outer">
     <div id="hero-image">
-        <link rel="preload" href="" as="image">
+       <img src="media/jonathan-borba-pIO8zFpgL_s-unsplash.jpg">
     </div>
     <div id="cover-text">
-        <h2>Characafe</h2>
+        <h1>Characafe</h1>
         <p>Eat delicious food inspired by our range of cute characters and meet our mascots!</p>
     </div>
 
 </section>
-<section class="menu">
+<section id="character-section">
+    <h2>Characters</h2>
+    {% if characters %}
+    <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            {% for character in characters %}
+            {% if character.image %}
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{ forloop.counter0 }}"
+                class="{% if forloop.first %}active{% endif %}" {% if forloop.first %}aria-current="true" {% endif %}
+                aria-label="Slide {{ forloop.counter }}"></button>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="carousel-inner">
+            {% for character in characters %}
+            {% if character.image %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="10000">
+                <img src="{{ character.image.url }}" class="d-block w-50 mx-auto" alt="{{ character.name }}">
+                <div class="carousel-caption d-md-block">
+                    <h5><a href="">{{ character.name }}</a></h5>
+                    <div class="carouselcaption mx-auto">{{ character.description }}</div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    {% endif %}
+</section>
+<section id="menu">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="menu-caption">
+                <h2><i class="fa-solid fa-utensils"></i> Menu <i class="fa-solid fa-utensils"></i></h2>
+                <p> Our Menu changes from season to season, so be sure to come to enjoy it!</p>
+                </div>
+                {% for menuitem in menu_list %}
+            
+            <div class="col-md-4 mb-4">
+                <img class="rounded-img" src="{{ menuitem.image.url }}" loading="lazy" alt="{{ menuitem.name }}">
+                <h5 class="menu-title"> {{ menuitem.name }}</h5>
+                <small class="menu-text"> {{ menuitem.description }} </small>
 
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </section>
 <section id="location">
 
