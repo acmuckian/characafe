@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.shortcuts import render
-from django.db.models import Q, Lower
+from django.db.models.functions import Lower 
+from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Product, Character

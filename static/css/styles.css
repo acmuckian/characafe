@@ -1,0 +1,185 @@
+/* base styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Comic+Relief&family=Nanum+Pen+Script&display=swap');
+
+:root {
+    --menu-font: "Nanum Pen Script", serif;
+    --nav-font: "Cherry Bomb One", serif;
+    --body-font: "Comic Relief", system-ui;
+
+}
+
+#nav-title {
+    font-family: var(--nav-font);
+    font-size: 3rem;
+    color: #8EC4DB;
+}
+
+.navbar {
+
+    background: #F8FBF7;
+    background: linear-gradient(90deg, rgba(248, 251, 247, 1) 0%, rgba(243, 191, 147, 1) 50%, rgba(242, 222, 228, 1) 100%);
+}
+
+
+
+.nav-item {
+    font-family: var(--nav-font);
+    color: #78695F;
+}
+
+/* styles for home page */
+
+#hero-image-outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    height:400px;
+    overflow:hidden;
+}
+
+#cover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(252, 252, 192, 0.9);
+    border-radius: 15px;
+    color: #F3BF93;
+    width: 300px;
+    height: 200px;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size:3.5rem;
+}
+
+h1, h2 {
+    font-family: var(--nav-font);
+    text-align: center;
+    color: #F3BF93;
+
+}
+
+p {
+    font-family: var(--body-font);
+}
+
+#character-section {
+    background: #F2DEE4;
+
+    padding: 10px;
+    margin: 5px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    color: #FCFBA8;
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+
+}
+
+.carousel-caption {
+    width: 50%;
+    padding: 2rem;
+    text-align: left;
+    color: #78695F;
+    background: rgba(252, 252, 192, 0.9);
+    border-radius: 15px;
+    margin-left: 2rem;
+
+}
+
+.carousel-caption h5 {
+    font-family: var(--nav-font);
+    font-size: 2rem;
+    color: #F3BF93;
+    margin-bottom: 1rem;
+}
+
+.carousel-caption .carouselcaption {
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #78695F;
+}
+
+.carousel-caption a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.carousel-caption a:hover {
+    color: #8EC4DB;
+}
+
+#menu {
+    background: #F8FBF7;
+    border: 5px dotted #8EC4DB;
+
+}
+
+.menu-caption {
+    background: rgba(252, 252, 192, 0.9);
+    border-radius: 15px;
+    justify-content: center;
+    color: #78695F;
+    padding: 10px;
+
+}
+
+@keyframes menuitemchange {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rounded-img {
+    border-radius: 50%;
+    border: 5px dotted #F2DEE4;
+    padding: 5px;
+    box-shadow: #F2DEE4 0px 0px 0px 2px, rgba(245, 211, 194, 0.3) 0px 0px 0px 7px inset;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.rounded-img:hover {
+    animation-name: menuitemchange;
+    animation-duration: 2s;
+}
+
+.menu-title {
+    font-family: var(--menu-font);
+    text-align: center;
+    font-size: 2rem;
+}
+
+.menu-text {
+    text-align: center;
+    color: #8EC4DB;
+    font-family: var(--body-font);
+}
