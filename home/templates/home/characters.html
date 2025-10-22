@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section id="hero-image-outer">
+    <div id="hero-image">
+        <img src="{% static 'images/umm-e-hani-ali-RHikSfVAvss-unsplash.png' %}">
+    </div>
+    <div id="cover-text">
+        <h1>Characters</h1>
+        <p>Meet our adorable cast of Characters!</p>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        {% for character in characters %}
+
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="character-card-container">
+                <img src="{{ character.image.url }}" class="character-rounded-img" alt="{{ character.name }}">
+                <h3> {{character.name }}</h3>
+                <p> {{ character.description }} </p>
+                <small> <i class="fa-solid fa-cake-candles"></i> {{ character.birthday }} </small>
+                <br>
+                <button class="chara-btn"><a href="">Goods</a></button>
+                <div class="interests">
+                    <h5><i class="fa-solid fa-heart"></i>Likes<i class="fa-solid fa-heart"></i></h5>
+                    <ul class="mx-auto">
+                        <li> {{ character.likes }} </li>
+                    </ul>
+                    </h5><i class="fa-solid fa-heart-crack"></i>Dislikes<i class="fa-solid fa-heart-crack"></i></h5>
+                    <ul class="mx-auto">
+                        <li>{{ character.dislikes }}</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
