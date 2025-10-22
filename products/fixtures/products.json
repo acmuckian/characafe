@@ -7,7 +7,8 @@
     "price": "12",
     "rating": "4",
     "character": "Perri",
-    "available": "Yes"
+    "available": "Yes",
+    "slug": "perri-mug"
   },
   {
     "image": "products/perrikeychain.png",
@@ -17,7 +18,8 @@
     "price": "4.5",
     "rating": "3.7",
     "character": "Perri",
-    "available": "Yes"
+    "available": "Yes",
+    "slug": "perri-keychain"
   },
   {
     "image": "products/perritumbler.png",
@@ -27,7 +29,8 @@
     "price": "8.99",
     "rating": "4.1",
     "character": "Perri",
-    "available": "Yes"
+    "available": "Yes",
+    "slug": "perri-tumbler"
   },
   {
     "image": "products/carrotomug.png",
@@ -37,7 +40,8 @@
     "price": "12",
     "rating": "4.5",
     "character": "Carroto",
-    "available": "Yes"
+    "available": "Yes",
+    "slug": "carroto-mug"
   },
   {
     "image": "products/carrotokeychain.png",
@@ -47,7 +51,8 @@
     "price": "4.5",
     "rating": "3.7",
     "character": "Carroto",
-    "available": "Yes"
+    "available": "Yes",
+    "slug": "carroto-keychain"
   },
   {
     "image": "products/carrotoutensils.png",
@@ -57,7 +62,8 @@
     "price": "13.99",
     "rating": "4.2",
     "character": "Carroto",
-    "available": "Yes"
+    "available": "Yes",
+    "slug": "carroto-utensils"
   },
   {
     "image": "products/cherrinmug.png",
@@ -67,7 +73,8 @@
     "price": "12",
     "rating": "4.8",
     "character": "Cherrin",
-    "available": "No"
+    "available": "No",
+    "slug": "cherrin-mug"
   },
   {
     "image": "products/cherrinutensils.png",
@@ -77,7 +84,8 @@
     "price": "13.99",
     "rating": "4",
     "character": "Cherrin",
-    "available": "No"
+    "available": "No",
+    "slug": "cherrin-utensils"
   },
   {
     "image": "products/cherrinbadge.png",
@@ -87,17 +95,19 @@
     "price": "3.5",
     "rating": "3.5",
     "character": "Cherrin",
-    "available": "No"
+    "available": "No",
+    "slug": "cherrin-badge"
   },
   {
-    "image": "products/banoffimug.png",
+    "image": "products/banoffitumbler.png",
     "name": "Banoffi Tumbler",
     "description": "This will soon become a favourite for any drink with the sparkle added by Banoffi",
     "details": "Dishwasher-safe, approx 10cm (H) x 9cm (D)",
     "price": "",
     "rating": "4.1",
     "character": "Banoffi",
-    "available": "Yes"
+    "available": "Yes",
+    "slug": "banoffi-tumbler"
   },
   {
     "image": "products/banoffiutensils.png",
@@ -107,7 +117,8 @@
     "price": "13.99",
     "rating": "4.5",
     "character": "Banoffi",
-    "available": "Yes"
+    "available": "Yes",
+    "slug": "banoffi-utensils"
   },
   {
     "image": "products/banoffikeychain.png",
@@ -117,7 +128,8 @@
     "price": "4.5",
     "rating": "3.7",
     "character": "Banoffi",
-    "available": "Yes"
+    "available": "Yes",
+    "slug": "banoffi-keychain"
   },
   {
     "image": "products/broccotumbler.png",
@@ -127,7 +139,8 @@
     "price": "8.99",
     "rating": "4.2",
     "character": "Brocco",
-    "available": "Yes"
+    "available": "Yes",
+    "slug": "brocco-tumbler"
   },
   {
     "image": "products/broccomug.png",
@@ -137,7 +150,8 @@
     "price": "8.99",
     "rating": "5",
     "character": "Brocco",
-    "available": "Yes"
+    "available": "Yes",
+    "slug": "brocco-mug"
   },
   {
     "image": "products/broccoutensils.png",
@@ -147,6 +161,7 @@
     "price": "13.99",
     "rating": "4.6",
     "character": "Brocco",
-    "available": "Yes"
+    "available": "Yes",
+    "slug": "brocco-utensils"
   }
 ]
