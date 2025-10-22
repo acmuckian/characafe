@@ -1,0 +1,152 @@
+[
+  {
+    "image": "products/perrimug.png",
+    "name": "Perri Mug",
+    "description": "Enjoy a delicious drink in this cute mug featuring Perri!",
+    "details": "Ceramic dishwasher and microwave-safe mug ",
+    "price": "12",
+    "rating": "4",
+    "character": "Perri",
+    "available": "Yes"
+  },
+  {
+    "image": "products/perrikeychain.png",
+    "name": "Perri Keychain",
+    "description": "Add sparkle to your bag or outfit with this adorable acrylic keychain featuring Perri",
+    "details": "Size without strap approx 5cm (H) x 8cm (W) x 0.5cm (D)",
+    "price": "4.5",
+    "rating": "3.7",
+    "character": "Perri",
+    "available": "Yes"
+  },
+  {
+    "image": "products/perritumbler.png",
+    "name": "Perri Tumbler",
+    "description": "This will soon become a favourite for any drink with the sparkle added by Perri",
+    "details": "Dishwasher-safe, approx 10cm (H) x 9cm (D)",
+    "price": "8.99",
+    "rating": "4.1",
+    "character": "Perri",
+    "available": "Yes"
+  },
+  {
+    "image": "products/carrotomug.png",
+    "name": "Carroto Mug",
+    "description": "Be as cool as Carroto every morning with this mug!",
+    "details": "Ceramic dishwasher and microwave-safe mug ",
+    "price": "12",
+    "rating": "4.5",
+    "character": "Carroto",
+    "available": "Yes"
+  },
+  {
+    "image": "products/carrotokeychain.png",
+    "name": "Carroto Keychain",
+    "description": "An acrylic keychain featuring Carroto",
+    "details": "Size without strap approx 5cm (H) x 8cm (W) x 0.5cm (D)",
+    "price": "4.5",
+    "rating": "3.7",
+    "character": "Carroto",
+    "available": "Yes"
+  },
+  {
+    "image": "products/carrotoutensils.png",
+    "name": "Carroto Utensils",
+    "description": "Brighten every meal with this Carroto cutlery set ",
+    "details": "Features one knife, fork and spoon approx 18cm length each",
+    "price": "13.99",
+    "rating": "4.2",
+    "character": "Carroto",
+    "available": "Yes"
+  },
+  {
+    "image": "products/cherrinmug.png",
+    "name": "Cherrin Mug",
+    "description": "Have a nice cup of jo from this cute mug with Cherri ",
+    "details": "Ceramic dishwasher and microwave-safe mug ",
+    "price": "12",
+    "rating": "4.8",
+    "character": "Cherrin",
+    "available": "No"
+  },
+  {
+    "image": "products/cherrinutensils.png",
+    "name": "Cherrin Utensils",
+    "description": "Brighten every meal with this Cherrin cutlery set ",
+    "details": "Features one knife, fork and spoon approx 18cm length each",
+    "price": "13.99",
+    "rating": "4",
+    "character": "Cherrin",
+    "available": "No"
+  },
+  {
+    "image": "products/cherrinbadge.png",
+    "name": "Cherrin Badge",
+    "description": "Perfect to add cuteness to your badge or outfit ",
+    "details": "Badge has safety-pin backing; size 50mm diameter",
+    "price": "3.5",
+    "rating": "3.5",
+    "character": "Cherrin",
+    "available": "No"
+  },
+  {
+    "image": "products/banoffimug.png",
+    "name": "Banoffi Tumbler",
+    "description": "This will soon become a favourite for any drink with the sparkle added by Banoffi",
+    "details": "Dishwasher-safe, approx 10cm (H) x 9cm (D)",
+    "price": "",
+    "rating": "4.1",
+    "character": "Banoffi",
+    "available": "Yes"
+  },
+  {
+    "image": "products/banoffiutensils.png",
+    "name": "Banoffi Utensils",
+    "description": "Brighten every meal with this Banoffi cutlery set ",
+    "details": "Features one knife, fork and spoon approx 18cm length each",
+    "price": "13.99",
+    "rating": "4.5",
+    "character": "Banoffi",
+    "available": "Yes"
+  },
+  {
+    "image": "products/banoffikeychain.png",
+    "name": "Banoffi Keychain",
+    "description": "Add sparkle to your bag or outfit with this adorable acrylic keychain featuring Banoffi",
+    "details": "Size without strap approx 5cm (H) x 8cm (W) x 0.5cm (D)",
+    "price": "4.5",
+    "rating": "3.7",
+    "character": "Banoffi",
+    "available": "Yes"
+  },
+  {
+    "image": "products/broccotumbler.png",
+    "name": "Brocco Tumbler",
+    "description": "This will soon become a favourite for any drink with the sparkle added by Brocco",
+    "details": "Dishwasher-safe, approx 10cm (H) x 9cm (D)",
+    "price": "8.99",
+    "rating": "4.2",
+    "character": "Brocco",
+    "available": "Yes"
+  },
+  {
+    "image": "products/broccomug.png",
+    "name": "Brocco Mug",
+    "description": "Have a nice cup of jo from this cute mug with Brocco",
+    "details": "Ceramic dishwasher and microwave-safe mug ",
+    "price": "8.99",
+    "rating": "5",
+    "character": "Brocco",
+    "available": "Yes"
+  },
+  {
+    "image": "products/broccoutensils.png",
+    "name": "Brocco Utensils",
+    "description": "Brighten every meal with this Brocco cutlery set ",
+    "details": "Features one knife, fork and spoon approx 18cm length each",
+    "price": "13.99",
+    "rating": "4.6",
+    "character": "Brocco",
+    "available": "Yes"
+  }
+]
