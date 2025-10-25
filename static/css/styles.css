@@ -21,6 +21,10 @@
     background: linear-gradient(90deg, rgba(248, 251, 247, 1) 0%, rgba(243, 191, 147, 1) 50%, rgba(242, 222, 228, 1) 100%);
 }
 
+footer {
+    background: linear-gradient(90deg, rgba(248, 251, 247, 1) 0%, rgba(243, 191, 147, 1) 50%, rgba(242, 222, 228, 1) 100%);
+}
+
 
 
 .nav-item {
@@ -317,9 +321,10 @@ h3 {
     font-family: var(--body-font);
     color: #F3BF93;
 }
+
 .product-card-body a {
     text-decoration: none;
-    color:#78695F;
+    color: #78695F;
 }
 
 .product-card-body a:hover {
@@ -341,43 +346,92 @@ h3 {
     border-radius: 5px;
     font-size: 0.9em;
 }
-.sort-container select, option {
-    background-color:#8EC4DB;
-    color:#F8FBF7;
-    font-family:var(--body-font);
+
+.sort-container select,
+option {
+    background-color: #8EC4DB;
+    color: #F8FBF7;
+    font-family: var(--body-font);
 }
 
 #sort-selector {
-    background-color:#8EC4DB;
-    color:#F8FBF7;
-    font-family:var(--body-font);
+    background-color: #8EC4DB;
+    color: #F8FBF7;
+    font-family: var(--body-font);
 
 }
 
 /* css for product_detail */
 
 .product-detail-section {
-    color:#78695F; 
-    padding:5px;
+    color: #78695F;
+    padding: 5px;
+}
+
+.shop-return {
+    color: #8EC4DB;
+    background-color: #78695F;
+    text-decoration: none;
+    font-family: var(--menu-font);
+    font-size: 1.2em;
+
+}
+
+.shop-return:hover {
+    background-color: #8EC4DB;
+    color: #78695F;
 }
 
 .product-detail-section h3 {
- color:#F3BF93; 
+    color: #F3BF93;
 }
+
 .shop-now-bg {
-    background-color:#F5D3C2;
-    font-size:2rem;
-    color:#F8FBF7;
-    border-radius:5px;
-    border:none;
-    font-family:var(--menu-font);
+    background-color: #F5D3C2;
+    font-size: 1.3rem;
+    color: #F8FBF7;
+    border-radius: 5px;
+    border: none;
+    font-family: var(--menu-font);
 
 }
+
 .cta-shop {
-    border-bottom:2px dotted #8EC4DB;
-    padding-bottom:2px; 
+    border-bottom: 2px dotted #8EC4DB;
+    padding-bottom: 2px;
 }
 
 .details-class {
-    border-top:2px dotted #8EC4DB; 
+    border-top: 2px dotted #8EC4DB;
+}
+
+/* bag page */
+#hero-image-outer-sm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.bag-table th {
+    font-family: var(--nav-font);
+    color: #78695F;
+}
+
+.checkout {
+    background-color: #F5D3C2;
+    font-family: var(--nav-font);
+    color: #F8FBF7;
+}
+
+.up-btn {
+    background-color: #FCFBA8;
+    color: #F8FBF7;
+}
+
+.total-section h4 {
+    color: #F3BF93;
+    font-family: var(--body-font);
 }
