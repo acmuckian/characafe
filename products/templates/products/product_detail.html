@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            {% if product.image %}
+            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 product-detail-section">
+            <div class="">
+                <h3> {{ product.name }}</h3>
+                <div class="cta-shop">
+                    <span> <strong><i class="fa-regular fa-star"></i>{{ product.rating }}</strong> <button
+                            class="shop-now-bg">Add to Bag</button></span>
+                </div>
+                <strong> €{{ product.price }}</strong>
+                <p> {{ product.description }} </p>
+                <div class="details-class">
+                    <small>Details:</small>
+                    <p> {{ product.details }}</p>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h2>You might also like... </h2>
+<div class="container-fluid">
+    <div class="row">
+        {% for related_product in related_products %}
+        <div class=" col-lg-3 offset-lg-1 col-md-4 col-sm-6">
+            <div class="product-card h-100">
+                <a href="{% url 'product_detail' related_product.slug %}"><img src="{{ related_product.image.url }}" class="card-img-top" alt="{{ related_product.description }}"></a>
+                <div class="product-card-body">
+                    <h5 class="card-title"> {{ related_product.name }}</h5>
+                    <small><i class="fa-regular fa-star"></i> {{ related_product.rating }}</small>
+                    <p class="card-text"> €{{ related_product.price }} <button
+                            class="shop-now {% if not related_product.available %} hidden {% endif %}">Add to
+                            Bag</button></p>
+                    {% if not related_product.available %}
+                    <span class="badge bg-danger">Out of Stock</span>
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

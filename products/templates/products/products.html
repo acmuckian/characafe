@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section id="hero-image-outer">
+    <div id="hero-image">
+        <img src="{% static 'images/annie-spratt--xWyFtHExC8-unsplash.png' %}">
+    </div>
+    <div id="cover-text">
+        <h1>{% if current_character %}
+            {{ current_character.name }} Products 
+            {% else %}
+            Shop {% endif %}</h1>
+        <p>Browse the whole collection!</p>
+    </div>
+
+
+
+
+
+</section>
+<div class="container-fluid">
+    <div class="row">
+        {% for product in products %}
+        <div class="col col-lg-3 offset-lg-1 col-md-4 col-sm-6">
+            <div class="product-card h-100">
+                <a href="{% url 'product_detail' product.slug %}"><img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.description }}"></a>
+                <div class="product-card-body">
+                    <h5 class="card-title"> <a href="{% url 'product_detail' product.slug %}">{{ product.name }} </a></h5>
+                    <small><i class="fa-regular fa-star"></i> {{ product.rating }}</small>
+                    <p class="card-text"> €{{ product.price }} <button class="shop-now {% if not product.available %} hidden {% endif %}">Add to Bag</button></p>
+                    {% if not product.available %}
+                    <span class="badge bg-danger">Out of Stock</span>
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

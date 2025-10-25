@@ -10,11 +10,11 @@ class Product(models.Model):
     name = models.CharField(max_length=200, unique=True, blank=False, null=False)
     slug = models.SlugField(max_length=200, unique=True, blank=True)
     description = models.TextField(max_length=1000, unique=True, blank=False, null=False)
-    details = models.TextField(max_length=1000, unique=True, blank=False, null=False, default=None)
+    details = models.TextField(max_length=1000, unique=False, blank=False, null=False, default="")
     price = models.DecimalField(max_digits=6, decimal_places=2)
     available = models.BooleanField(default=False)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    wishlist = models.ManyToManyField(User, related_name='favourite', default=None, blank=True)
+    wishlist = models.ManyToManyField(User, related_name='favourite',  blank=True)
     character = models.ForeignKey(
         Character,
         on_delete=models.CASCADE,

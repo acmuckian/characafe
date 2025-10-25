@@ -9,7 +9,7 @@
             "details": "Ceramic dishwasher and microwave-safe mug",
             "price": "12.00",
             "rating": "4.0",
-            "character": 1,
+            "character": 2,
             "available": true,
             "slug": "perri-mug"
         }
@@ -24,7 +24,7 @@
             "details": "Size without strap approx 5cm (H) x 8cm (W) x 0.5cm (D)",
             "price": "4.50",
             "rating": "3.7",
-            "character": 1,
+            "character": 2,
             "available": true,
             "slug": "perri-keychain"
         }
@@ -39,7 +39,7 @@
             "details": "Dishwasher-safe, approx 10cm (H) x 9cm (D)",
             "price": "8.99",
             "rating": "4.1",
-            "character": 1,
+            "character": 2,
             "available": true,
             "slug": "perri-tumbler"
         }
@@ -54,7 +54,7 @@
             "details": "Ceramic dishwasher and microwave-safe mug",
             "price": "12.00",
             "rating": "4.5",
-            "character": 2,
+            "character": 1,
             "available": true,
             "slug": "carroto-mug"
         }
@@ -69,7 +69,7 @@
             "details": "Size without strap approx 5cm (H) x 8cm (W) x 0.5cm (D)",
             "price": "4.50",
             "rating": "3.7",
-            "character": 2,
+            "character": 1,
             "available": true,
             "slug": "carroto-keychain"
         }
@@ -84,7 +84,7 @@
             "details": "Features one knife, fork and spoon approx 18cm length each",
             "price": "13.99",
             "rating": "4.2",
-            "character": 2,
+            "character": 1,
             "available": true,
             "slug": "carroto-utensils"
         }

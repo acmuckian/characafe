@@ -1,39 +1,30 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.shortcuts import render
 from django.db.models.functions import Lower 
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Product, Character
+from .models import Product
+from home.models import Character
 
 # Create your views here.
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
     products = Product.objects.all()
     query = None
-    categories = None
+    character = None
     sort = None
     direction = None
 
     if request.GET: 
-        sortkey = request.GET['sort']
-        sort = sortkey
-        if sortkey == 'name':
-            sortkey = 'lower_name'
-            products = products.annotate(lower_name=Lower('name'))
-            if sortkey == 'character':
-                sortkey = 'character__name'
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)
-            
         if 'character' in request.GET:
-            characters = request.GET['character'].split(',')
-            products = products.filter(character__name__in=characters)
-            characters = Character.objects.filter(name__in=characters)
-            
+            character_name = request.GET['character'].lower()
+            try:
+                character = Character.objects.get(name__iexact=character_name)
+                products = products.filter(character=character)
+            except Character.DoesNotExist:
+                pass
+
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -42,15 +33,39 @@ def all_products(request):
             
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
+        
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
+            
+    context = {
+        'products': products,
+        'search_term': query,
+        'current_character': character,
+    }
+
+    return render(request, 'products/products.html', context)
     
 def product_detail(request, slug):
     """
     Display individual product details
     """
     product = get_object_or_404(Product, slug=slug)
+
+    related_products = Product.objects.filter(character=product.character).exclude(id=product.id)
     
     context = {
         'product': product,
+        'related_products': related_products,
     }
     
     return render(request, 'products/product_detail.html', context)

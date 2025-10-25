@@ -201,13 +201,14 @@ p {
     width: 350px;
     max-width: 100%;
     text-align: center;
-    margin:10px;
+    margin: 10px;
 }
 
 h3 {
-    font-family:var(--nav-font);
-    color:#FCFCC0;
+    font-family: var(--nav-font);
+    color: #FCFCC0;
 }
+
 .character-rounded-img {
 
     border-radius: 50%;
@@ -231,7 +232,7 @@ h3 {
     background-color: #FCFBA8;
     box-shadow: none;
     border: 2px #78695F;
-    font-size:1.2rem;
+    font-size: 1.2rem;
 
 
 }
@@ -243,7 +244,7 @@ h3 {
 }
 
 .chara-btn:hover {
-    background-color:#F3BF93;
+    background-color: #F3BF93;
 }
 
 .chara-btn a:hover {
@@ -256,8 +257,8 @@ h3 {
     padding: 5px;
     margin-top: 30px;
     font-family: var(--menu-font);
-    border-radius:5px;
-    border-top:#8EC4DB 5px dotted;
+    border-radius: 5px;
+    border-top: #8EC4DB 5px dotted;
 
 }
 
@@ -282,10 +283,10 @@ h3 {
     font-family: var(--menu-font);
     box-shadow: rgba(245, 211, 194, 0.3) 0px 0px 0px 7px inset;
     width: 200px;
-    justify-content:center;
+    justify-content: center;
 }
 
-/* menu items */ 
+/* menu items */
 
 .square-img {
     border-radius: 10%;
@@ -295,4 +296,17 @@ h3 {
     width: 200px;
     height: 200px;
     object-fit: contain;
+}
+
+/* shop page */
+
+.product-card {
+    border: none;
+    font-family: var(--body-font);
+    color: #F3BF93;
+}
+
+.product-card-body {
+    font-family: var(--body-font);
+    color: #F3BF93;
 }
