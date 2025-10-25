@@ -24,7 +24,7 @@
                 <p> {{ character.description }} </p>
                 <small> <i class="fa-solid fa-cake-candles"></i> {{ character.birthday }} </small>
                 <br>
-                <button class="chara-btn"><a href="">Goods</a></button>
+                <button class="chara-btn"><a href="{% url 'products' %}?character={{ character.name }}">Goods</a></button>
                 <div class="interests">
                     <h5><i class="fa-solid fa-heart"></i>Likes<i class="fa-solid fa-heart"></i></h5>
                     <ul class="mx-auto">

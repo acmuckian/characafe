@@ -201,13 +201,14 @@ p {
     width: 350px;
     max-width: 100%;
     text-align: center;
-    margin:10px;
+    margin: 10px;
 }
 
 h3 {
-    font-family:var(--nav-font);
-    color:#FCFCC0;
+    font-family: var(--nav-font);
+    color: #FCFCC0;
 }
+
 .character-rounded-img {
 
     border-radius: 50%;
@@ -231,7 +232,7 @@ h3 {
     background-color: #FCFBA8;
     box-shadow: none;
     border: 2px #78695F;
-    font-size:1.2rem;
+    font-size: 1.2rem;
 
 
 }
@@ -243,7 +244,7 @@ h3 {
 }
 
 .chara-btn:hover {
-    background-color:#F3BF93;
+    background-color: #F3BF93;
 }
 
 .chara-btn a:hover {
@@ -256,8 +257,8 @@ h3 {
     padding: 5px;
     margin-top: 30px;
     font-family: var(--menu-font);
-    border-radius:5px;
-    border-top:#8EC4DB 5px dotted;
+    border-radius: 5px;
+    border-top: #8EC4DB 5px dotted;
 
 }
 
@@ -282,10 +283,10 @@ h3 {
     font-family: var(--menu-font);
     box-shadow: rgba(245, 211, 194, 0.3) 0px 0px 0px 7px inset;
     width: 200px;
-    justify-content:center;
+    justify-content: center;
 }
 
-/* menu items */ 
+/* menu items */
 
 .square-img {
     border-radius: 10%;
@@ -295,4 +296,76 @@ h3 {
     width: 200px;
     height: 200px;
     object-fit: contain;
+}
+
+/* css for products page */
+
+.product-card {
+    border: none;
+    font-family: var(--body-font);
+    color: #F3BF93;
+    margin: 5px;
+}
+
+.product-card h5 {
+    color: #78695F;
+    font-family: var(--menu-font);
+    font-size: 1.5rem;
+}
+
+.product-card-body {
+    font-family: var(--body-font);
+    color: #F3BF93;
+}
+.product-card-body a {
+    text-decoration: none;
+    color:#78695F;
+}
+
+.product-card-body a:hover {
+    color: #8EC4DB;
+}
+
+.hidden {
+    display: none;
+}
+
+.card-text {
+    justify-content: center;
+}
+
+.shop-now {
+    background-color: #8EC4DB;
+    color: #F8FBF7;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+/* css for product_detail */
+
+.product-detail-section {
+    color:#78695F; 
+    padding:5px;
+}
+
+.product-detail-section h3 {
+ color:#F3BF93; 
+}
+.shop-now-bg {
+    background-color:#F5D3C2;
+    font-size:2rem;
+    color:#F8FBF7;
+    border-radius:5px;
+    border:none;
+    font-family:var(--menu-font);
+
+}
+.cta-shop {
+    border-bottom:2px dotted #8EC4DB;
+    padding-bottom:2px; 
+}
+
+.details-class {
+    border-top:2px dotted #8EC4DB; 
 }
