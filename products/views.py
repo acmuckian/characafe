@@ -51,6 +51,7 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_character': character,
+        'current_sorting': f'{sort}_{direction}' if sort and direction else sort,
     }
 
     return render(request, 'products/products.html', context)
