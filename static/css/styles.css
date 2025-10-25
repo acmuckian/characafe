@@ -341,6 +341,18 @@ h3 {
     border-radius: 5px;
     font-size: 0.9em;
 }
+.sort-container select, option {
+    background-color:#8EC4DB;
+    color:#F8FBF7;
+    font-family:var(--body-font);
+}
+
+#sort-selector {
+    background-color:#8EC4DB;
+    color:#F8FBF7;
+    font-family:var(--body-font);
+
+}
 
 /* css for product_detail */
 

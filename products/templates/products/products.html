@@ -7,37 +7,89 @@
     </div>
     <div id="cover-text">
         <h1>{% if current_character %}
-            {{ current_character.name }} Products 
+            {{ current_character.name }} Products
             {% else %}
             Shop {% endif %}</h1>
         <p>Browse the whole collection!</p>
     </div>
-
-
-
-
-
+    </div>
 </section>
-<div class="container-fluid">
-    <div class="row">
-        {% for product in products %}
-        <div class="col col-lg-3 offset-lg-1 col-md-4 col-sm-6">
-            <div class="product-card h-100">
-                <a href="{% url 'product_detail' product.slug %}"><img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.description }}"></a>
-                <div class="product-card-body">
-                    <h5 class="card-title"> <a href="{% url 'product_detail' product.slug %}">{{ product.name }} </a></h5>
-                    <small><i class="fa-regular fa-star"></i> {{ product.rating }}</small>
-                    <p class="card-text"> €{{ product.price }} <button class="shop-now {% if not product.available %} hidden {% endif %}">Add to Bag</button></p>
-                    {% if not product.available %}
-                    <span class="badge bg-danger">Out of Stock</span>
-                    {% endif %}
 
+
+<div class="row">
+    <div class="sort-container col-10 offset-1">
+        <div class="row mt-1 mb-2">
+            <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end">
+                <div class="">
+                    <select id="sort-selector"
+                        class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
+                        </option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to
+                            high)</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high
+                            to low)</option>
+                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating
+                            (high to low)</option>
+                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)
+                        </option>
+                        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)
+                        </option>
+                        <option value="category_asc" {% if current_sorting == 'character_asc' %}selected{% endif %}>
+                            Character (A-Z)</option>
+                        <option value="category_desc" {% if current_sorting == 'character_desc' %}selected{% endif %}>
+                            Character (Z-A)</option>
+                    </select>
                 </div>
-
             </div>
         </div>
-        {% endfor %}
     </div>
 </div>
+</section>
 
-{% endblock %}
+    <div class="container-fluid">
+        <div class="row">
+            {% for product in products %}
+            <div class="col col-lg-3 offset-lg-1 col-md-4 col-sm-6">
+                <div class="product-card h-100">
+                    <a href="{% url 'product_detail' product.slug %}"><img src="{{ product.image.url }}"
+                            class="card-img-top" alt="{{ product.description }}"></a>
+                    <div class="product-card-body">
+                        <h5 class="card-title"> <a href="{% url 'product_detail' product.slug %}">{{ product.name }} </a>
+                        </h5>
+                        <small><i class="fa-regular fa-star"></i> {{ product.rating }}</small>
+                        <p class="card-text"> €{{ product.price }} <button
+                                class="shop-now {% if not product.available %} hidden {% endif %}">Add to
+                                Bag</button></p>
+                        {% if not product.available %}
+                        <span class="badge bg-danger">Out of Stock</span>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('sort-selector').addEventListener('change', function () {
+            const value = this.value;
+            let url = new URL(window.location);
+
+            if (value != 'reset') {
+                var sort = value.split("_")[0];
+                var direction = value.split("_")[1];
+                url.searchParams.set("sort", sort);
+                url.searchParams.set("direction", direction);
+                window.location.replace(url);
+            } else {
+                url.searchParams.delete("sort");
+                url.searchParams.delete("direction");
+                window.location.replace(url);
+            }
+        })
+    </script>
+
+    {% endblock %}
