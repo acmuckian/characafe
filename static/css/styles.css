@@ -367,7 +367,16 @@ option {
     color: #78695F;
     padding: 5px;
 }
-
+.btn-secondary {
+    background-color:#78695F;
+    color:#F8FBF7;
+    font-family:var(--nav-font);
+}
+.btn-secondary:hover {
+    background-color:#F5D3C2;
+    color:#78695F;
+    border: #78695F;
+}
 .shop-return {
     color: #8EC4DB;
     background-color: #78695F;
@@ -434,4 +443,18 @@ option {
 .total-section h4 {
     color: #F3BF93;
     font-family: var(--body-font);
+}
+
+.remove-item, .update-link, .update-link a,
+.remove-item a {
+    cursor: pointer;
+    font-family:var(--body-font);
+    text-decoration:none;
+}
+
+.remove-item, .remove-item a {
+    color:#F3BF93;
+}
+.update-link, .update-link a {
+    color:#8EC4DB;
 }
