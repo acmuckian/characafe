@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+{% load bag_tools %}
 <section id="hero-image-outer-sm">
     <div id="hero-image">
         <img src="{% static 'images/umm-e-hani-ali-TZWuZ1E-s_A-unsplash.png' %}">
@@ -37,12 +38,12 @@
                         <p class="my-0">€{{ item.product.price }}</p>
                     </td>
                     <td class="py-3 w-25">
-                           <form class="form update-form" method="POST" action="">
+                           <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-secondary rounded-0" 
+                                                        <button class="decrement-qty btn btn-sm btn-secondary rounded-0"  type="button"
                                                             data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fas fa-minus fa-sm"></i>
@@ -54,24 +55,21 @@
                                                         data-item_id="{{ item.item_id }}"
                                                         id="id_qty_{{ item.item_id }}">
                                                     <div class="input-group-append">
-                                                        <button class="increment-qty btn btn-sm btn-secondary rounded-0"
+                                                        <button class="increment-qty btn btn-sm btn-secondary rounded-0" type="button"
                                                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fas fa-plus fa-sm"></i>
                                                             </span>
                                                         </button>
                                                     </div>
-                                                    {% if item.product.has_sizes %}
-                                                        <input type="hidden" name="product_size" value="{{ item.size }}">
-                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-link btn-outline-secondary text-info"><small>Update</small></a>
-                                        <a class="remove-item btn-danger float-right" id="remove_{{ item.item_id }}" data-item-id="{{ item.item_id }}"><small>Remove</small></a>
+                                        <a class="update-link text-info"><small>Update</small></a>
+                                        <a class="remove-item float-right" id="remove_{{ item.item_id }}" data-item-id="{{ item.item_id }}"><small>Remove</small></a>
                     </td>
                     <td class="py-3">
-                        <p class="my-0">€{{ item.product.price }}</p>
+                        <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity|floatformat:2  }}</p>
                     </td>
                 </tr>
                 {% endfor %}
@@ -121,18 +119,47 @@
 </div>
 </div>
 <script>
-    // update quantity on a click
-        document.querySelectorAll('.update-link').addEventListener('click', function(e) {
-            var form = this.previousElementSibling('.update-form');
+        // Increment quantity
+    document.querySelectorAll('.increment-qty').forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            var inputGroup = this.closest('.input-group');
+            var input = inputGroup.querySelector('.qty_input');
+            var currentValue = parseInt(input.value);
+            input.value = currentValue + 1;
+        });
+    });
+
+    // Decrement quantity
+    document.querySelectorAll('.decrement-qty').forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            var inputGroup = this.closest('.input-group');
+            var input = inputGroup.querySelector('.qty_input');
+            var currentValue = parseInt(input.value);
+            if (currentValue > 1) {
+                input.value = currentValue - 1;
+            }
+        });
+    });
+
+    // Update quantity on click
+    document.querySelectorAll('.update-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            var form = this.previousElementSibling;
             form.submit(); 
         });
-    // remove item and reload on click 
-      document.querySelectorAll('.remove-item').addEventListener('click', function(e) {
+    });
+
+    // Remove item and reload on click 
+    document.querySelectorAll('.remove-item').forEach(function(button) {
+        button.addEventListener('click', function(e) {
             var csrfToken = "{{ csrf_token }}";
             var itemId = this.dataset.itemId;
             var url = `/bag/remove/${itemId}/`;
             var data = new FormData();
             data.append('csrfmiddlewaretoken', csrfToken);
+            
             fetch(url, {
                 method: 'POST',
                 body: data,
@@ -140,10 +167,11 @@
             .then(response => {
                 if (response.ok) {
                     location.reload();
+                } else {
+                    console.error('Error removing item');
                 }
             });
-
         });
-    
+    });
 </script>
 {% endblock %}
