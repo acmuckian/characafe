@@ -14,6 +14,7 @@ def all_products(request):
     character = None
     sort = None
     direction = None
+   
 
     if request.GET: 
         if 'character' in request.GET:
