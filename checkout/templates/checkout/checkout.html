@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+<section id="hero-image-outer-sm">
+    <div id="hero-image">
+        <img src="{% static 'images/umm-e-hani-ali-TZWuZ1E-s_A-unsplash.png' %}">
+    </div>
+    <div id="cover-text">
+        <h1>Shopping Bag</h1>
+    </div>
+</section>
+<section class="order-summary">
+    <div class="container">
+        <div class="row">
+            <div class="bag-table table-responsive rounded w-50 mx-auto">
+                <table class="table table-sm table-borderless">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col">Product Info</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    {% for item in bag_items %}
+                    <tr>
+                        <td class="p-3 w-25">
+                            {% if item.product.image %}
+                            <img class="img-fluid rounded" src="{{ item.product.image.url }}"
+                                alt="{{ item.product.name }}">
+                            {% endif %}
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">€{{ item.product.price }}</p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">€{{ item.product.quantity }}</p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity|floatformat:2 }}</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="3" class="total-section mx-auto">
+                            <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
+                            <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
+                            <h4 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
