@@ -10,16 +10,17 @@
         <h1>Shopping Bag</h1>
     </div>
 </section>
-<section class="order-summary">
-    <div class="container">
-        <div class="row">
-            <div class="bag-table table-responsive rounded w-50 mx-auto">
+<div class="container">
+    <div class="row">
+        <div class="order-summary col-12 col-lg-5 order-1 order-lg-2 mb-4">
+            <div class="bag-table rounded w-100 mx-auto">
                 <table class="table table-sm table-borderless">
                     <thead class="text-black">
                         <tr>
                             <th scope="col">Product Info</th>
                             <th scope="col">Price</th>
                             <th scope="col">Quantity</th>
+                            <th></th>
                             <th scope="col">Subtotal</th>
                         </tr>
                     </thead>
@@ -38,7 +39,7 @@
                             <p class="my-0">€{{ item.product.price }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">€{{ item.product.quantity }}</p>
+                            <p class="my-0">€{{ item.quantity }}</p>
                         </td>
                         <td class="py-3">
                             <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity|floatformat:2 }}</p>
@@ -49,62 +50,74 @@
                         <td colspan="3" class="total-section mx-auto">
                             <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
                             <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
-                            <h4 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
                         </td>
+                        <td colspan="2"><h4 class="mt-4"><strong>Grand Total: € {{ grand_total|floatformat:2 }}</strong></h4></td>
                     </tr>
                 </table>
             </div>
         </div>
-    </div>
 
-</section>
-<section class="checkout-info">
-    <form action="{% url 'checkout' %}" method="POST" id="paymentform">
-        {% csrf_token %}
-        <fieldset>
-            <legend class="Personal Details">
-            </legend>
-            {{ order_form.name | as_crispy_field }}
-            {{ order_form.email | as_crispy_field }}
-            {{ order_form.phone_number | as_crispy_field }}
-        </fieldset>
-        <fieldset>
-            <legend class="Delivery Address">
-            </legend>
-            {{ order_form.street_address | as_crispy_field }}
-            {{ order_form.town_or_city | as_crispy_field }}
-            {{ order_form.county | as_crispy_field }}
-            {{ order_form.postcode | as_crispy_field }}
 
-            <div>
-                {% if user.is_authenticated %}
-                <label for="save-address">Save my delivery address details</label>
-                <input type="checkbox" id="save-address" name="save-address" checked>
-                {% else %}
-                <label for="save-address">
-                    <a href="{% url 'account_signup' %}">Create an account</a>
-                    <a href="{% url 'account_login' %}">Login</a> to save this information
-                </label>
-                {% endif %}
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Payment</legend>
-            <!-- stripe card -->
-            <div id="card-element"></div>
-            <!-- any card errors here-->
-            <div class="bg-danger" role="alert" id="card-errors"></div>
-        </fieldset>
-        <div class="submit-button">
-            <a href="{% url 'shopping_bag' %}">
-                <span>Change Bag</span>
-            </a>
-            <button>
-                <span>Complete Order</span>
-            </button>
-            <span class="">Your card will be charged <strong> {{ grand_total|floatformat:2 }}</strong></span>
+
+        <div class="checkout-info col-12 col-lg-6 order-2 order-lg-1">
+            <form action="{% url 'checkout' %}" method="POST" id="paymentform">
+                {% csrf_token %}
+                <fieldset>
+                    <legend>Personal Details
+                    </legend>
+                    {{ order_form.name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                    {{ order_form.phone_number | as_crispy_field }}
+                </fieldset>
+                <fieldset>
+                    <legend>Delivery Address</legend>
+                    {{ order_form.street_address | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
+                    {{ order_form.county | as_crispy_field }}
+                    {{ order_form.postcode | as_crispy_field }}
+                    {{ order_form.country | as_crispy_field }}
+
+                    <div>
+                        {% if user.is_authenticated %}
+                        <label for="save-address" class="save-address"><i class="fa-solid fa-user-plus"></i> Save my delivery address details</label>
+                        <input type="checkbox" id="save-address" name="save-address" checked>
+                        {% else %}
+                        <label for="save-address">
+                            <a href="{% url 'account_signup' %}">Create an account</a>
+                            <a href="{% url 'account_login' %}">Login</a> to save this information
+                        </label>
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Payment</legend>
+                    <small>Please complete your order below</small>
+                    <!-- stripe card -->
+                    <div id="card-element"></div>
+                    <!-- any card errors here-->
+                    <div class="callout-danger" role="alert" id="card-errors"></div>
+                </fieldset>
+                <div class="submit-button">
+                    <a href="{% url 'shopping_bag' %}" class="btn change-order">
+                        <span>Adjust My Order</span>
+                    </a>
+                    <button type="submit" id="submit-button" class="btn checkout">
+                        <span class="text-uppercase">Complete Order</span>
+                    </button>
+                    <br>
+                    <span class="payment-note text-lg-end"><i class="fa-solid fa-circle-info"></i> Your card will be charged <strong> €{{ grand_total|floatformat:2 }}</strong>
+                    </span>
+                </div>
+            </form>
         </div>
-    </form>
-</section>
+    </div>
+</div>
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key"}}
+{{ stripe_client_secret|json_script:"id_stripe_client_secret"}}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
