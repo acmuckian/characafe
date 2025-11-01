@@ -21,16 +21,22 @@ class OrderForm(forms.ModelForm):
             'phone_number': 'Phone Number',
             'postcode': 'Postal Code',
             'town_or_city': 'Town or City',
-            'street address': 'Street Address',
+            'street_address': 'Street Address',
             'county': 'County, State or Locality',
         }
 
         self.fields['name'].widget.attrs['autofocus'] = True
+
         for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            self.fields[field].label = False
+            if field != 'country':  # Skip country dropdown
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
+                self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+                self.fields[field].label = False
+        
+        
+        self.fields['country'].widget.attrs['class'] = 'stripe-style-input'
+        self.fields['country'].label = False
