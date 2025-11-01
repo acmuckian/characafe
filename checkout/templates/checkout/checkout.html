@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
+{% block content %}
 <section id="hero-image-outer-sm">
     <div id="hero-image">
         <img src="{% static 'images/umm-e-hani-ali-TZWuZ1E-s_A-unsplash.png' %}">
@@ -55,6 +57,54 @@
         </div>
     </div>
 
+</section>
+<section class="checkout-info">
+    <form action="{% url 'checkout' %}" method="POST" id="paymentform">
+        {% csrf_token %}
+        <fieldset>
+            <legend class="Personal Details">
+            </legend>
+            {{ order_form.name | as_crispy_field }}
+            {{ order_form.email | as_crispy_field }}
+            {{ order_form.phone_number | as_crispy_field }}
+        </fieldset>
+        <fieldset>
+            <legend class="Delivery Address">
+            </legend>
+            {{ order_form.street_address | as_crispy_field }}
+            {{ order_form.town_or_city | as_crispy_field }}
+            {{ order_form.county | as_crispy_field }}
+            {{ order_form.postcode | as_crispy_field }}
+
+            <div>
+                {% if user.is_authenticated %}
+                <label for="save-address">Save my delivery address details</label>
+                <input type="checkbox" id="save-address" name="save-address" checked>
+                {% else %}
+                <label for="save-address">
+                    <a href="{% url 'account_signup' %}">Create an account</a>
+                    <a href="{% url 'account_login' %}">Login</a> to save this information
+                </label>
+                {% endif %}
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Payment</legend>
+            <!-- stripe card -->
+            <div id="card-element"></div>
+            <!-- any card errors here-->
+            <div class="bg-danger" role="alert" id="card-errors"></div>
+        </fieldset>
+        <div class="submit-button">
+            <a href="{% url 'shopping_bag' %}">
+                <span>Change Bag</span>
+            </a>
+            <button>
+                <span>Complete Order</span>
+            </button>
+            <span class="">Your card will be charged <strong> {{ grand_total|floatformat:2 }}</strong></span>
+        </div>
+    </form>
 </section>
 
 {% endblock %}
