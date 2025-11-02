@@ -614,6 +614,28 @@ option {
     width:100%;
 }
 
+/* css for checkout success */
+
+.checkout-title {
+    color:#F3BF93;
+    font-family:var(--menu-font);
+}
+
+.checkout-success-info {
+    color:#78695F;
+    background-color:rgba(242, 222, 228, 0.4);
+    text-align:center;
+}
+
+.checkout-success p {
+    text-align:center;
+}
+
+.checkout-success h4 {
+    color:#8EC4DB;
+    text-align:center;
+}
+
 /* css for logout page **/
 #logout {
     background: #F8FBF7;

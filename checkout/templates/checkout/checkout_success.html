@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section id="hero-image-outer-sm">
+    <div id="hero-image">
+        <img src="{% static 'images/umm-e-hani-ali-TZWuZ1E-s_A-unsplash.png' %}">
+    </div>
+    <div id="cover-text">
+        <h2>Thanks for your order!</h2>
+        <p>Your order information is below - a confirmation email will be sent to you shortly. </p>
+    </div>
+</section>
+<section class="checkout-success">
+    <div class="col-12 col-lg-10 mx-auto">
+        <div class="order-summary">
+            <div class="row">
+                <h4 class="mx-auto"><i class="fa-regular fa-star"></i> Order Summary <i class="fa-regular fa-star"></i>
+                </h4>
+                <p> Your order number is {{ order.order_number }} and an email has been sent to {{ order.email }}</p>
+            </div>
+            <table class="w-100">
+                <thead>
+                    <tr>
+                        <th scope="col">Product Info</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                </thead>
+                {% for item in order.lineitems.all %}
+                <td class="py-3">
+                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                </td>
+                <td class="py-3">
+                    <p class="my-0">€{{ item.product.price }} each</p>
+                </td>
+                <td class="py-3">
+                    <p class="my-0">{{ item.quantity }}</p>
+                </td>
+                {% endfor %}
+            </table>
+            <h4> <i class="fa-regular fa-star"></i> Delivery Information <i class="fa-regular fa-star"></i></h4>
+            <div class="row checkout-info">
+                <div class="col-12 col-md-4">
+                    <p class="title-checkout">Full Name</p>
+                </div>
+                <div class="col-12 col-md-4 text-md-right">
+                    <p>{{ order.name }}</p>
+                </div>
+            </div>
+            <div class="row checkout-success-info">
+                <div class="col-12 col-md-4">
+                    <p class="title-checkout">Address</p>
+                </div>
+                <div class="col-12 col-md-4 text-md-right">
+                    <p>{{ order.street_address }}</p>
+                </div>
+            </div>
+            <div class="row checkout-info">
+                <div class="col-12 col-md-4">
+                    <p class="title-checkout">Town/City</p>
+                </div>
+                <div class="col-12 col-md-4 text-md-right">
+                    <p>{{ order.town_or_city }}</p>
+                </div>
+            </div>
+            <div class="row checkout-success-info">
+                <div class="col-12 col-md-4">
+                    <p class="title-checkout">County</p>
+                </div>
+                <div class="col-12 col-md-4 text-md-right">
+                    <p>{{ order.county }}</p>
+                </div>
+            </div>
+            {% if order.postcode %}
+            <div class="row checkout-info">
+                <div class="col-12 col-md-4">
+                    <p class="title-checkout">Postcode</p>
+                </div>
+                <div class="col-12 col-md-4 text-md-right">
+                    <p>{{ order.postcode }}</p>
+                </div>
+            </div>
+            {% endif %}
+            {% if order.country %}
+            <div class="row checkout-success-info">
+                <div class="col-12 col-md-4">
+                    <p class="">Country</p>
+                </div>
+                <div class="col-12 col-md-4 text-md-right">
+                    <p>{{ order.country }}</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <h4><i class="fa-regular fa-star"></i>Billing Information<i class="fa-regular fa-star"></i></h4>
+        <div class="row checkout-success-info">
+            <div class="col-12 col-md-4">
+                <p class="title-checkout">Total</p>
+            </div>
+            <div class="col-12 col-md-4 text-md-right">
+                <p>€{{ order.order_total }}</p>
+            </div>
+        </div>
+        <div class="row checkout-info">
+            <div class="col-12 col-md-4">
+                <p class="title-checkout">Delivery Fee</p>
+            </div>
+            <div class="col-12 col-md-4 text-md-right">
+                <p>€{{ order.delivery_cost }}</p>
+            </div>
+        </div>
+        <div class="row checkout-success-info">
+            <div class="col-12 col-md-4">
+                <p class="title-checkout"><strong>Grand Total</strong></p>
+            </div>
+            <div class="col-12 col-md-4 text-md-right">
+                <p><strong>€{{ order.grand_total }}</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="col-12 col-lg-5 text-right">
+    <a href="{% url 'products' %}" class="btn shop-return justify-content-center">
+        <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+        </span>
+        <span class="text-uppercase">Check out the rest of our range!</span>
+    </a>
+</div>
+
+
+
+{% endblock %}
