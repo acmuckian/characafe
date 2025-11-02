@@ -16,6 +16,9 @@ def checkout(request):
         messages.error(request, "There's nothing in your bag")
         return redirect(reverse('products'))
     
+    print(f"Public key exists: {bool(stripe_public_key)}")
+    print(f"Secret key exists: {bool(stripe_secret_key)}")
+    
     current_bag = bag_contents(request)
     total = current_bag['grand_total']
     stripe_total = round(total * 100)
@@ -27,7 +30,6 @@ def checkout(request):
         currency=settings.STRIPE_CURRENCY,
     )
 
-    print(intent)
     
     order_form = OrderForm()
     template = 'checkout/checkout.html'
@@ -35,7 +37,7 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,  
-    **current_bag,
+        **current_bag,
     }
 
     return render(request, template, context)
