@@ -45,9 +45,33 @@ form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
+    $('#paymentform').fadeOut(100);
+    $('#loading-overlay').fadeIn(100);
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
+                        billing_details: {
+                name: $.trim(form.name.value),
+                phone: $.trim(form.phone_number.value),
+                email: $.trim(form.email.value),
+                address:{
+                    address: $.trim(form.street_address.value),
+                    city: $.trim(form.town_or_city.value),
+                    country: $.trim(form.country.value),
+                    state: $.trim(form.county.value),
+                }
+            }
+        },
+        shipping: {
+            name: $.trim(form.name.value),
+            phone: $.trim(form.phone_number.value),
+            address: {
+                address: $.trim(form.street_address.value),
+                city: $.trim(form.town_or_city.value),
+                country: $.trim(form.country.value),
+                postal_code: $.trim(form.postcode.value),
+                state: $.trim(form.county.value),
+            }
         }
     }).then(function(result) {
         if (result.error) {
@@ -60,6 +84,8 @@ form.addEventListener('submit', function(ev) {
             $(errorDiv).html(html);
             card.update({ 'disabled': false});
             $('#submit-button').attr('disabled', false);
+            $('#paymentform').fadeToggle(100);
+            $('#loading-overlay').fadeToggle(100);
         } else {
             if (result.paymentIntent.status === 'succeeded') {
                 form.submit();
