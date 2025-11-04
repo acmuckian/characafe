@@ -51,7 +51,9 @@
                             <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
                             <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
                         </td>
-                        <td colspan="2"><h4 class="mt-4"><strong>Grand Total: € {{ grand_total|floatformat:2 }}</strong></h4></td>
+                        <td colspan="2">
+                            <h4 class="mt-4"><strong>Grand Total: € {{ grand_total|floatformat:2 }}</strong></h4>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -79,7 +81,8 @@
 
                     <div>
                         {% if user.is_authenticated %}
-                        <label for="save-address" class="save-address"><i class="fa-solid fa-user-plus"></i> Save my delivery address details</label>
+                        <label for="save-address" class="save-address"><i class="fa-solid fa-user-plus"></i> Save my
+                            delivery address details</label>
                         <input type="checkbox" id="save-address" name="save-address" checked>
                         {% else %}
                         <label for="save-address">
@@ -105,20 +108,20 @@
                         <span class="text-uppercase">Complete Order</span>
                     </button>
                     <br>
-                    <span class="payment-note text-lg-end"><i class="fa-solid fa-circle-info"></i> Your card will be charged <strong> €{{ grand_total|floatformat:2 }}</strong>
+                    <span class="payment-note text-lg-end"><i class="fa-solid fa-circle-info"></i> Your card will be
+                        charged <strong> €{{ grand_total|floatformat:2 }}</strong>
                     </span>
                 </div>
             </form>
         </div>
     </div>
 </div>
-    <div id="loading-overlay">
-        <h1 class="text-light logo-font loading-spinner">
-            <span class="icon">
-                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
-            </span>
-        </h1>
+<div id="loading-overlay" class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" role="status" aria-live="polite" aria-busy="true">
+        <span class="visually-hidden">
+        </span>
     </div>
+</div>
 
 {% endblock %}
 
