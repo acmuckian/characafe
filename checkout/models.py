@@ -5,11 +5,13 @@ from django.conf import settings
 import uuid
 from django.core.validators import MinValueValidator
 from products.models import Product
+from profiles.models import Profile 
 
 # Create your models here.
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    profile = models.ForeignKey(Profile, on_delete=models.SET_NULL, blank=True, null=True, related_name="orders")
     email = models.EmailField(blank=False, null=False)
     name = models.CharField(max_length=200, unique=False, blank=False, null=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)

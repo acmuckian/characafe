@@ -53,12 +53,19 @@
             <div class="product-card h-100">
                 <a href="{% url 'product_detail' product.slug %}"><img src="{{ product.image.url }}"
                         class="card-img-top" alt="{{ product.description }}"></a>
+                {% if user.is_authenticated %}
+                {% if product.slug in wishlist_ids %}
+                 <a href="{% url 'add_to_wishlist' product.slug %}" class="wishlist-icon"><i class="fa-solid fa-heart-circle-minus"></i> </a>
+                    {% else %}
+                    <a href="{% url 'add_to_wishlist' product.slug %}" class="wishlist-icon"><i class="fa-solid fa-heart-circle-plus"></i></a>
+                {% endif %}
+                {% endif %}
                 <div class="product-card-body">
                     <h5 class="card-title"> <a href="{% url 'product_detail' product.slug %}">{{ product.name }} </a>
                     </h5>
                     <small><i class="fa-regular fa-star"></i> {{ product.rating }}</small>
                     <p class="card-text"> €{{ product.price }}</p>
-                        {% if product.available %}
+                    {% if product.available %}
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="quantity" value="1">

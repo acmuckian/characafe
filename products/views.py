@@ -64,10 +64,15 @@ def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
 
     related_products = Product.objects.filter(character=product.character).exclude(id=product.id)
-    
+    if request.user.is_authenticated:
+        wishlist_ids = request.user.wishlist.values_list('id', flat=True)
+    else:
+        wishlist_ids = []
+   
     context = {
         'product': product,
         'related_products': related_products,
+        'wishlist_ids': wishlist_ids,
     }
     
     return render(request, 'products/product_detail.html', context)
@@ -88,10 +93,14 @@ def add_to_wishlist(request, slug):
     product = get_object_or_404(Product, slug=slug)
     if product.wishlist.filter(id=request.user.id).exists():
         product.wishlist.remove(request.user)
-        messages.success(request, messages.SUCCESS, 'Removed from your wishlist!')
+        messages.success(request, f'Removed {product.name} from your wishlist!')
     else:
         product.wishlist.add(request.user)
-        product.success(request, messages.SUCCESS, 'Added to your wishlist!')
+        messages.success(request, f'Added {product.name} to your wishlist!')
+
+    redirect_url = request.META.get('HTTP_REFERER')
+    if redirect_url:
+        return redirect(redirect_url)
     return redirect('product_detail', slug=product.slug)
 
 
