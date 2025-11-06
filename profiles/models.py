@@ -17,7 +17,7 @@ a profile page for users and shoppers
     default_country = CountryField(blank_label='Country *', null=True, blank=True)
 
     def __str__(self):
-        return self.user.usrname 
+        return self.user.username 
     
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
@@ -27,4 +27,4 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
     # Existing users: just save the profile
-    instance.userprofile.save()
+    instance.profile.save()

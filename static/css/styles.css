@@ -701,6 +701,15 @@ option {
     height: 300px;
 }
 
+/* profile css */
+
+.update-btn {
+    background-color:#F5D3C2;
+    border:#78695F 2px solid;
+    color:#78695F;
+    font-family:var(--nav-font);
+}
+
 @media only screen and (max-width: 400px) {
     #logout img {
         height: 1cap;
