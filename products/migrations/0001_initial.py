@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('home', '0004_character_birthday_character_colour_and_more'),
+        ('home', '0003_alter_character_image_alter_menuitem_image'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
