@@ -700,6 +700,27 @@ option {
     text-align: center;
 }
 
+/* css for register page */ 
+
+.loginregister {
+    background-color:rgba(252, 252, 192, 0.7);
+    color:#78695F;
+    border-radius:15px;
+    margin-bottom:5px;
+    text-align:center;
+
+}
+
+.loginregister a {
+    color:#8EC4DB;
+    text-decoration: none;
+}
+
+.loginregister input {
+    border:none;
+    border-radius:5px;
+}
+
 /* css for logout page **/
 #logout {
     background: #F8FBF7;
