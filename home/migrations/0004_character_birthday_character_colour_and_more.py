@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='character',
             name='birthday',
-            field=models.DateField(db_default=django.db.models.functions.datetime.Now()),
+            field=models.DateField(default=django.db.models.functions.datetime.Now()),
         ),
         migrations.AddField(
             model_name='character',

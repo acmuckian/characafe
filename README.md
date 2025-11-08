@@ -81,40 +81,40 @@ The Friendcurate logo is in the [Rubik 80s Fade](https://fonts.google.com/specim
 
 ### Wireframes 
 
-_Main Page_ 
+_Home Page_ 
 
-* [main page desktop](https://wireframe.cc/kxj2er)
-* [main page tablet](https://wireframe.cc/rukpGh)
-* [main page mobile](https://wireframe.cc/1K0dqB)
+* [main page desktop](https://wireframe.cc/0iwC3p)
+* [main page tablet](https://wireframe.cc/Bf2JI6)
+* [main page mobile](https://wireframe.cc/SiHKW5 )
 
-_Image Page_
+_Products Page_
 
-* [image page desktop](https://wireframe.cc/uvEuhR)
-* [image page tablet](https://wireframe.cc/GXKa5m)
-* [image page mobile](https://wireframe.cc/G0QL0L)
+* [products page desktop](https://wireframe.cc/EI3Cje)
+* [products page tablet](https://wireframe.cc/jMg7bh)
+* [products page mobile](https://wireframe.cc/VyUqu9)
 
-_Favourites Page_
+_Characters Page_
 
-* [favourites desktop](https://wireframe.cc/B0jAuX)
-* [favourites tablet](https://wireframe.cc/8G19GM)
-* [favourites mobile](https://wireframe.cc/EpAQln)
+* [characters page desktop](https://wireframe.cc/7UdzCk)
+* [characters page tablet](https://wireframe.cc/IuJedb)
+* [characters page mobile]( https://wireframe.cc/41b8Rr)
 
-_Contact Page_
+_Menu Page_
 
-* [contact page desktop](https://wireframe.cc/g8eHLm)
-* [contact page tablet](https://wireframe.cc/SGlbw4)
-* [contact page mobile](https://wireframe.cc/LlWFUj)
+* [menu page desktop](https://wireframe.cc/LqSGhy)
+* [menu page tablet](https://wireframe.cc/rBWUCs)
+* [menu page mobile](https://wireframe.cc/2VecRq)
 
 _Profile Page_ 
 
-* [profile desktop](https://wireframe.cc/b7zDhR)
-* [profile tablet](https://wireframe.cc/yqJ1Wa) 
-* [profile mobile](https://wireframe.cc/ccvz3a)
+* [profile desktop]()
+* [profile tablet]() 
+* [profile mobile]()
 
 ### Data Schema 
 
 ![lucidchart screenshot](static/images/friendcurate%20chart.png)
-[Lucidchart](https://www.lucidchart.com/pages) was for the data schema for Friendcurate which uses a relational model, as illustrated in the Entity Relationship Diagram (ERD) provided. Above is an Entity Relationship Diagram that shows the key models and their fields.
+[Lucidchart](https://www.lucidchart.com/pages) was for the data schema for Characafe which uses a relational model, as illustrated in the Entity Relationship Diagram (ERD) provided. Above is an Entity Relationship Diagram that shows the key models and their fields.
 
 
 

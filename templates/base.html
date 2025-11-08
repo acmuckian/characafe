@@ -105,7 +105,7 @@
                                 id="navbar-avatar" style="height:70px;">
                             {% endif %}
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="">Profile</a>
+                                <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
                                 <a class="dropdown-item" href="">WishList</a>
                                 <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                         </a>
@@ -164,11 +164,11 @@
                 <div class="col-12 col-md-4 text-center"><i class="far fa-bell"></i>
                     <p> Subscribe to Our Weekly Newsletter:</p>
 
-                    <form method="post" action="">
-
-                        <button type="submit" class="btn btn-outline-secondary" id="newsletterbutton">Subscribe</button>
+                    <form method="post" action="{% url 'subscribe' %}">
+                        {% csrf_token %}
+                        {{ subscribe_form|crispy }}
+                        <button type="submit" class="btn btn-secondary" id="newsletterbutton">Subscribe</button>
                     </form>
-
                 </div>
             </div>
         </div>
@@ -181,8 +181,8 @@
         });
     </script>
 
-{% block postloadjs %}
-{% endblock %}
+    {% block postloadjs %}
+    {% endblock %}
 
 </body>
 

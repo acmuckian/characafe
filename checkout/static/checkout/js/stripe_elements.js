@@ -46,7 +46,7 @@ $(document).ready(function () {
         card.update({ 'disabled': true });
         $('#submit-button').attr('disabled', true);
         $('#paymentform').fadeOut(100);
-        $('#loading-overlay').fadeIn(100);
+        $('#loading-overlay').css('display', 'flex');
 
         var saveInfo = Boolean($('#id-save-info').attr('checked'));
         // From using {% csrf_token %} in the form
