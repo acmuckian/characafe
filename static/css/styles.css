@@ -703,12 +703,15 @@ option {
 /* css for register page */ 
 
 .loginregister {
-    background-color:rgba(252, 252, 192, 0.7);
+    background-color:rgba(242, 222, 228, 0.5);
     color:#78695F;
     border-radius:15px;
     margin-bottom:5px;
     text-align:center;
 
+}
+.login-register li {
+    list-style-type: "\1F33C";
 }
 
 .loginregister a {
