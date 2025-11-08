@@ -9,6 +9,8 @@ import stripe
 from .forms import OrderForm 
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.models import Profile 
+from profiles.forms import ProfileForm
 import json
 
 
@@ -86,8 +88,25 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-        
-        order_form = OrderForm()
+
+
+        if request.user.is_authenticated:
+            try:
+                profile = Profile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+                    'country': profile.default_country,
+                    'postcode': profile.default_postcode,
+                    'town_or_city': profile.default_town_or_city,
+                    'street_address': profile.default_street_address,
+                    'county': profile.default_county,
+                })
+            except Profile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
 
         if not stripe_public_key:
@@ -107,8 +126,32 @@ def checkout_success(request, order_number):
     """
     Handle successful checkouts
     """
+    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    
+
+
+    if request.user.is_authenticated:
+        profile = Profile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.profile = profile
+        order.save()
+
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'default_phone_number': order.phone_number,
+                'default_country': order.country,
+                'default_postcode': order.postcode,
+                'default_town_or_city': order.town_or_city,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+                'default_county': order.county,
+            }
+            profile_form = ProfileForm(profile_data, instance=profile)
+            if profile_form.is_valid():
+                profile_form.save()
+
+
     if 'bag' in request.session:
         del request.session['bag'] 
     

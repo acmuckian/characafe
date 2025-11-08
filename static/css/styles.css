@@ -34,7 +34,10 @@ body {
     width: 100%;
     background-attachment: scroll;
     margin-top: auto;
+    margin: auto;
+    text-align:center;
 }
+
 
 
 
@@ -639,7 +642,7 @@ option {
 
 
 #loading-overlay {
-    display: none !important;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -704,10 +707,10 @@ option {
 /* profile css */
 
 .update-btn {
-    background-color:#F5D3C2;
-    border:#78695F 2px solid;
-    color:#78695F;
-    font-family:var(--nav-font);
+    background-color: #F5D3C2;
+    border: #78695F 2px solid;
+    color: #78695F;
+    font-family: var(--nav-font);
 }
 
 @media only screen and (max-width: 400px) {

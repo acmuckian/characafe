@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row mx-auto justify-content-center">
+        <div class="contact-us col-lg-9 col-md-9 col-12">
+            <h2>Newsletter</h2>
+
+            <p>Characafe has a monthly newsletter bringing a spotlight to our characters, the cafe, menu updates and new
+                goods!
+                To sign up to this newsletter straight in your inbox, please put in your e-mail address below:
+            </p>
+            <form method="post" action="{% url 'subscribe' %}">
+                {% csrf_token %}
+                {{ subscribe_form|crispy }}
+                <button type="submit" class="btn btn-secondary">Subscribe</button>
+            </form>
+        </div>
+
+
+        <div class="contact-us mx-auto col-lg-9 col-md-9 col-12">
+            <h2>Contact Us</h2>
+
+            <p>Thank you for using our website! We are always looking for ways to innovate and improve on our website
+                for
+                the
+                user
+                experience, and welcome feedback. 🌼 
+            </p>
+            <form method="post" action="{% url 'contact' %}">
+                {{ contact_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+        </div>
+        <!--- subscribe modal -->
+        <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="submitModalLabel">Thanks for subscribing!</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>You have been subscribed to the newsletter.</p>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--- contact modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Thanks for your message</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p> Thanks for contacting us. We'll be in touch soon!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if request.GET.contacted == "1" %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var modal = new bootstrap.Modal(document.getElementById('contactModal'));
+        modal.show();
+    });
+</script>
+{% endif %}
+
+{% if request.GET.subscribed == "1" %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var modal = new bootstrap.Modal(document.getElementById('subscribeModal'));
+        modal.show();
+    });
+</script>
+{% endif %}
+
+{% endblock content %}
