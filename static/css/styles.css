@@ -760,3 +760,10 @@ option {
         height: 1cap;
     }
 }
+
+
+@media only screen and (max-width:500px) {
+    .carousel-caption p {
+        display:none;
+    }
+}
