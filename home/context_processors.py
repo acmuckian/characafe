@@ -1,4 +1,4 @@
-from contact.forms import SubscribeForm
+from contact.forms import NewsletterForm
 
 def subscribe_form(request):
-    return {'subscribe_form': SubscribeForm()}
+    return {'subscribe_form': NewsletterForm()}
