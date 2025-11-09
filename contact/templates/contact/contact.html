@@ -29,7 +29,7 @@
                 user
                 experience, and welcome feedback. 🌼 
             </p>
-            <form method="post" action="{% url 'subscribe' %}">
+            <form method="post" action="{% url 'contact' %}">
                 {{ contact_form | crispy }}
                 {% csrf_token %}
                 <button type="submit" class="btn btn-secondary">Submit</button>

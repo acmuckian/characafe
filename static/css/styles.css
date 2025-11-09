@@ -791,4 +791,7 @@ option {
         white-space: wrap;
         text-overflow: ellipsis;
     }
+    #hero-image-outer {
+        max-height:300px;
+    }
 }

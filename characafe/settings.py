@@ -97,6 +97,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'bag.contexts.bag_contents',
                 'home.context_processors.subscribe_form',
+                'contact.context_processors.newsletter_form',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',

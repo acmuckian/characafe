@@ -118,4 +118,13 @@ Automated testing was performed for some of views and forms for both img and con
 | sorting   name A-Z shows name order A-Z                                         | Yes        |
 | sorting   rating high to low shows product with highest ratings first           | Yes        |
 
+| **Contact   Page**                                                                                          |            |
+|-------------------------------------------------------------------------------------------------------------|------------|
+| **Feature**                                                                                                 | **Status** |
+| inserting   text but not an email address on the contact page prompts for an email   address to be inserted | Yes        |
+| contact   submit shows contact modal                                                                        | Yes        |
+| cannot   subscribe without inserting email                                                                  | Yes        |
+| must be   an email address for subscription                                                                 | Yes        |
+| clicking   submit triggers a modal notification for the subscription                                        | Yes        |
+| clicking   submit triggers a modal notification for the message being sent                                  | Yes        |
 ## Bugs 
