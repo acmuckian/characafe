@@ -154,7 +154,7 @@ def my_wishlist(request):
 
     return render(
         request,
-        'account/wishlist.html',
+        'products/wishlist.html',
         {"wishlist": wishlist}
     )
 
