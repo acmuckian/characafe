@@ -3,7 +3,8 @@
 {% block content %}
 <section id="hero-image-outer-sm">
     <div id="hero-image">
-        <img src="{% static 'images/annie-spratt--xWyFtHExC8-unsplash.png' %}">
+        <img src="{% static 'images/annie-spratt--xWyFtHExC8-unsplash.png' %}"
+            alt="green background with pink and red flowers">
     </div>
     <div id="cover-text">
         <h1>{% if current_character %}
@@ -11,7 +12,6 @@
             {% else %}
             Shop {% endif %}</h1>
         <p>Browse the whole collection!</p>
-    </div>
     </div>
 </section>
 
@@ -23,21 +23,21 @@
                 <div class="">
                     <select id="sort-selector"
                         class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
+                        <option value="reset" {% if current_sorting=='None_None' %}selected{% endif %}>Sort by...
                         </option>
-                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to
+                        <option value="price_asc" {% if current_sorting=='price_asc' %}selected{% endif %}>Price (low to
                             high)</option>
-                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high
+                        <option value="price_desc" {% if current_sorting=='price_desc' %}selected{% endif %}>Price (high
                             to low)</option>
-                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating
+                        <option value="rating_desc" {% if current_sorting=='rating_desc' %}selected{% endif %}>Rating
                             (high to low)</option>
-                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)
+                        <option value="name_asc" {% if current_sorting=='name_asc' %}selected{% endif %}>Name (A-Z)
                         </option>
-                        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)
+                        <option value="name_desc" {% if current_sorting=='name_desc' %}selected{% endif %}>Name (Z-A)
                         </option>
-                        <option value="character_asc" {% if current_sorting == 'character_asc' %}selected{% endif %}>
+                        <option value="character_asc" {% if current_sorting=='character_asc' %}selected{% endif %}>
                             Character (A-Z)</option>
-                        <option value="character_desc" {% if current_sorting == 'character_desc' %}selected{% endif %}>
+                        <option value="character_desc" {% if current_sorting=='character_desc' %}selected{% endif %}>
                             Character (Z-A)</option>
                     </select>
                 </div>
@@ -55,9 +55,11 @@
                         class="card-img-top" alt="{{ product.description }}"></a>
                 {% if user.is_authenticated %}
                 {% if product.slug in wishlist_ids %}
-                 <a href="{% url 'add_to_wishlist' product.slug %}" class="wishlist-icon"><i class="fa-solid fa-heart-circle-minus"></i> </a>
-                    {% else %}
-                    <a href="{% url 'add_to_wishlist' product.slug %}" class="wishlist-icon"><i class="fa-solid fa-heart-circle-plus"></i></a>
+                <a href="{% url 'add_to_wishlist' product.slug %}" class="wishlist-icon"><i
+                        class="fa-solid fa-heart-circle-minus"></i> </a>
+                {% else %}
+                <a href="{% url 'add_to_wishlist' product.slug %}" class="wishlist-icon"><i
+                        class="fa-solid fa-heart-circle-plus"></i></a>
                 {% endif %}
                 {% endif %}
                 <div class="product-card-body">

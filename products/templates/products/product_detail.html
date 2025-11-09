@@ -13,7 +13,7 @@
             <div class="">
                 <h3> {{ product.name }}</h3>
                 <div class="cta-shop">
-                    <span> <strong><i class="fa-regular fa-star"></i>{{ product.rating }}</strong>
+                    <span> <strong><i class="fa-regular fa-star"></i>{{ product.rating }}</strong></span>
                         <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                             {% csrf_token %}
                             <div class="form-row">
