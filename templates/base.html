@@ -76,9 +76,6 @@
                             <li><a class="dropdown-item" href="{% url 'products' %}?character=brocco">Brocco</a></li>
                         </ul>
                     </li>
-
-
-
                     {% if user.is_authenticated %}
                     {% if request.user.is_superuser %}
                     <li class="nav-item"><a href="" class="nav-link">Product Management</a>
@@ -97,16 +94,15 @@
                         </a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" id="username" href="#">{{ user.username }}</a></li>
                     <li class="nav-item dropdown" id="profile-dropdown">
                         <a href="#" class="nav-link dropdown-toggle avatar-dropdown" data-bs-toggle="dropdown"
                             role="button" aria-expanded="false">
                             {% if user.profile and user.profile.avatar %}
-                            <img class="navbar-icon" id="navbar-avatar" src="{{ user.profile.avatar.url }}" alt="Avatar"
+                            <img src="{{ user.profile.avatar.url }}" alt="Avatar" id="navbar-avatar" class="navbar-icon"
                                 style="height:70px;" loading="lazy">
                             {% else %}
-                            <img class="navbar-icon" id="navbar-avatar" src="{% static 'images/default-pic.png' %}"
-                                alt="Default Avatar" style="height:70px;" loading="lazy">
+                            <img src="{% static 'images/default-pic.png' %}" alt="Default Avatar" id="navbar-avatar"
+                                class="navbar-icon" style="height:70px;" loading="lazy">
                             {% endif %}
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
@@ -116,8 +112,12 @@
                         </div>
                     </li>
                     {% else %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Register</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    </li>
                     {% endif %}
 
                 </ul>

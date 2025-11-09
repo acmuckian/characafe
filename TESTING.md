@@ -81,7 +81,41 @@ Automated testing was performed for some of views and forms for both img and con
 
 
 ## Features Testing 
+|                         **Home   Page**                         |            |
+|:---------------------------------------------------------------:|:----------:|
+| **Feature**                                                     | **Status** |
+| Clicking   Characafe brings up home page                        | Yes        |
+| clicking   contact leads to contact page                        | Yes        |
+| clicking   menu leads to menu page                              | Yes        |
+| clicking   menu leads to characters page                        | Yes        |
+| navbar   shows username when logged in                          | Yes        |
+| dropdown   beside avatar shows profile, wishlist and logout     | Yes        |
+| click   logout goes to logout page                              | Yes        |
+| clicking   profile goes to profile page                         | Yes        |
+| clicking   shopping bag icon shows bag page                     | Yes        |
+| **carousel  **                                                  |            |
+| clicking   right on the carousel shows next slide               | Yes        |
+| clicking   right on the carousel shows slide before             | Yes        |
+| carousel   moves independently                                  | Yes        |
+| **menu  **                                                      |            |
+| menu   icons spin when hovered over                             | Yes        |
+| **footer**                                                      |            |
+| clicking   social media icons open social media page in new tab | Yes        |
+| can't   subscribe unless you enter text                         | Yes        |
+| can't   subscribe without entering an email address             | Yes        |
 
-
+| **Shop   Main Page**                                                            |            |
+|---------------------------------------------------------------------------------|------------|
+| **Feature**                                                                     | **Status** |
+| Adding   product to wishlist notifies you it was added                          | Yes        |
+| adding   product to bag updates the bag                                         | Yes        |
+| adding   product to bag notifies that it was added                              | Yes        |
+| adding   product to bag notification shows you a summary of what is in the bag  | Yes        |
+| clicking   on product image brings you to product page                          | Yes        |
+| clicking   on product title brings you to product page                          | Yes        |
+| sorting   price low to high shows lowest priced item first                      | Yes        |
+| sorting   name Z-A shows name order Z-A                                         | Yes        |
+| sorting   name A-Z shows name order A-Z                                         | Yes        |
+| sorting   rating high to low shows product with highest ratings first           | Yes        |
 
 ## Bugs 
