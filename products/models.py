@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from home.models import Character
+
 # Create your models here.
 
 
@@ -23,3 +25,14 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+class Comment(models.Model):
+    commenter = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name="comments")
+    created_on = created_on = models.DateTimeField(auto_now_add=True)
+    body = models.TextField(max_length=1000, blank=False, null=False, default="")
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.commenter}"

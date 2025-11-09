@@ -95,6 +95,7 @@
                         </a>
                     </li>
                     {% if user.is_authenticated %}
+                    <li class="nav-item"><a href="{% url 'profile' %}"></a>{{ username }}</li>
                     <li class="nav-item dropdown" id="profile-dropdown">
                         <a href="#" class="nav-link dropdown-toggle avatar-dropdown" data-bs-toggle="dropdown"
                             role="button" aria-expanded="false">
