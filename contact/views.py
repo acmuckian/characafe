@@ -46,14 +46,14 @@ def subscribe(request):
     form = NewsletterForm(request.POST or None, prefix="footer_subscribe")
     if request.method == "POST" and form.is_valid():
         form.save()
-        messages.success(request, "You subscribed to our newsletter!")
+        messages.info(request, "You subscribed to our newsletter!")
         return redirect(reverse('contact') + '?subscribed=1')
     # If not valid, try the other prefix
     if request.method == "POST":
         form = NewsletterForm(request.POST, prefix="contact_subscribe")
         if form.is_valid():
             form.save()
-            messages.success(request, "You subscribed to our newsletter!")
+            messages.info(request, "You subscribed to our newsletter!")
             return redirect(reverse('contact') + '?subscribed=1')
     # Default forms for rendering
     contact_form = ContactForm()
