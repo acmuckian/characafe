@@ -200,6 +200,7 @@ p {
 
 }
 
+
 #location {
     background-color: #8EC4DB;
     color: #F8FBF7;
@@ -212,6 +213,10 @@ p {
 #location ul {
     text-decoration: none;
     border: 2px solid #78695F;
+}
+
+#location li {
+    text-decoration: none;
 }
 
 @keyframes menuitemchange {

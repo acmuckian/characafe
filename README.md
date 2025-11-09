@@ -1,8 +1,8 @@
 # Characafe
 
-![Characafe on amiresponsive.dev]()
+![Characafe on amiresponsive.dev](characafe-amiresponsive.png)
 
-[Vist the live website.]()
+[Vist the live website.](https://characafe-1eb4a9dff267.herokuapp.com/)
 
 Characafe is a cafe with a menu based on five cute characters, as well as a variety of goods dedicated to these characters. 
 
@@ -15,7 +15,17 @@ The front page displays a carousel of the five characters, allowing the visitor 
 
 ![front page screenshot]()
 
+There are three sections to the front page - 
 
+![front page carousel](media/characafe-carousel.png)
+
+A carousel showing the characters that are the feature of the website. 
+
+![front page menu](media/menu-characafe.png)
+
+The menu with menu items. 
+
+![front page location section]()
 
 ### Navbar
 
@@ -23,11 +33,11 @@ The navigation bar changes depending on whether a user is logged in or not.
 
 When logged out, the visitor/user shall see the home page, the option to login or sign up to use the website. 
 
-![navbar when logged out screenshot]()
+![navbar when logged out screenshot](media/characafe-navbar.png)
 
 When logged in, the user will see their username and avatar with a drop down for their profile, wishlist and logout page. 
 
-![navbar when logged in screenshot]()
+![navbar when logged in screenshot](media/characafe-navbar-logged.png)
 
 Both versions will show the cart and the number of the items that are currently in the user's cart at any given time. 
 
@@ -35,7 +45,7 @@ Both versions will show the cart and the number of the items that are currently 
 
 ### Characters Page 
 
-![image display screenshot]()
+![character display screenshot]()
 
 This is the page displaying the five characters so users can learn more about them, their likes, dislikes, birthday etc. There is also a button to see goods of these characters so users can buy them. 
 
