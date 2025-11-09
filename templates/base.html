@@ -96,6 +96,7 @@
                             {% endif %}
                         </a>
                     </li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" href="" id="username"> {{user.username}} </a></li>
                     <li class="nav-item dropdown" id="profile-dropdown">
                         <a href="" class="nav-link dropdown-toggle avatar-dropdown" data-bs-toggle="dropdown"
@@ -107,25 +108,26 @@
 
                             <img src="{% static 'images/default-pic.png' %}" alt="Default Avatar" loading="lazy"
                                 id="navbar-avatar" style="height:70px;">
-                            {% endif %}
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                                <a class="dropdown-item" href="">WishList</a>
-                                <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                         </a>
-            </div>
-            </li>
-            {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-            </li>
-            {% endif %}
+                        {% endif %}
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                            <a class="dropdown-item" href="">WishList</a>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
 
-            </ul>
-        </div>
+                        </div>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </div>
         </div>
     </nav>
     {% if messages %}
