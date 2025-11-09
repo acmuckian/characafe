@@ -196,6 +196,20 @@ p {
 
 }
 
+#location {
+    background-color:#8EC4DB;
+    color:#F8FBF7;
+}
+
+#location img {
+    float:left;
+}
+
+#location ul {
+    text-decoration: none;
+    border:2px solid #78695F;
+}
+
 @keyframes menuitemchange {
     from {
         transform: rotate(0);

@@ -12,7 +12,7 @@ class Product(models.Model):
     description = models.TextField(max_length=1000, unique=True, blank=False, null=False)
     details = models.TextField(max_length=1000, unique=False, blank=False, null=False, default="")
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    available = models.BooleanField(default=False)
+    available = models.BooleanField(default=True)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     wishlist = models.ManyToManyField(User, related_name='wishlist',  blank=True)
     character = models.ForeignKey(
