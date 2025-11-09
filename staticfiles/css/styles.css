@@ -34,6 +34,15 @@ body {
     width: 100%;
     background-attachment: scroll;
     margin-top: auto;
+    margin: auto;
+    text-align: center;
+    color: #78695F;
+}
+
+.footer-p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -41,6 +50,10 @@ body {
 .nav-item {
     font-family: var(--nav-font);
     color: #78695F;
+}
+
+.dropdown-menu {
+    background-color:#F5D3C2; 
 }
 
 .message-container {
@@ -107,7 +120,11 @@ h2 {
 
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: var(--nav-font);
 }
 
@@ -169,18 +186,37 @@ p {
 }
 
 #menu {
-    background: #F8FBF7;
-    border: 5px dotted #8EC4DB;
+    background-color: #78695F;
+    padding: 5px;
 
 }
 
 .menu-caption {
     background: rgba(252, 252, 192, 0.9);
     border-radius: 15px;
-    justify-content: center;
+    width: 75%;
     color: #78695F;
     padding: 10px;
 
+}
+
+
+#location {
+    background-color: #8EC4DB;
+    color: #F8FBF7;
+}
+
+#location img {
+    float: left;
+}
+
+#location ul {
+    text-decoration: none;
+    border: 2px solid #78695F;
+}
+
+#location li {
+    text-decoration: none;
 }
 
 @keyframes menuitemchange {
@@ -200,7 +236,7 @@ p {
     box-shadow: #F2DEE4 0px 0px 0px 2px, rgba(245, 211, 194, 0.3) 0px 0px 0px 7px inset;
     width: 300px;
     height: 300px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .rounded-img:hover {
@@ -212,28 +248,30 @@ p {
     font-family: var(--menu-font);
     text-align: center;
     font-size: 2rem;
+    color: #FCFCC0;
 }
 
 .menu-text {
     text-align: center;
-    color: #8EC4DB;
+    color: #F8FBF7;
     font-family: var(--body-font);
+    width: 75%;
 }
 
 .toast-body {
-    
+
     font-family: var(--body-font);
-    color:#78695F;
+    color: #78695F;
 }
 
 .toast-msg {
     border-bottom: 2px dotted #F3BF93;
-    padding:2px;
+    padding: 2px;
 }
 
 .toast-border {
     border-top: 2px dotted #F3BF93;
-    
+
 }
 
 .toast-info {
@@ -244,8 +282,8 @@ p {
 }
 
 .toast-total {
-    color:#F3BF93;
-    font-family:var(--body-font);
+    color: #F3BF93;
+    font-family: var(--body-font);
 }
 
 /* css for characters page */
@@ -286,7 +324,7 @@ h3 {
 
 .chara-btn {
     border-radius: 5px;
-    color: #FCFCC0;
+    color: #78695F;
     font-family: var(--menu-font);
     background-color: #FCFBA8;
     box-shadow: none;
@@ -297,7 +335,7 @@ h3 {
 }
 
 .chara-btn a {
-    color: #F3BF93;
+    color: #78695F;
     text-decoration: none;
 
 }
@@ -345,7 +383,12 @@ h3 {
     justify-content: center;
 }
 
-/* menu items */
+/* menu  page css */
+
+.menu-main {
+    background-color: #78695F;
+    padding: 5px;
+}
 
 .square-img {
     border-radius: 10%;
@@ -354,8 +397,13 @@ h3 {
     box-shadow: 10px 10px #F5D3C2;
     width: 200px;
     height: 200px;
-    object-fit: contain;
+    object-fit: cover;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 2px;
 }
+
+
 
 /* css for products page */
 
@@ -370,6 +418,22 @@ h3 {
     color: #78695F;
     font-family: var(--menu-font);
     font-size: 1.5rem;
+}
+
+.wishlist-icon {
+    color: #F3BF93;
+    background-color: #F8FBF7;
+    padding: 5px;
+    border-radius: 50px;
+    border-color: #F5D3C2 3px solid;
+    position: relative;
+    right: calc(-100% + 50px);
+    top: -50px;
+}
+
+
+.wishlist-icon:hover {
+    color: #8EC4DB;
 }
 
 .product-card-body {
@@ -522,6 +586,168 @@ option {
     color: #8EC4DB;
 }
 
+/* checkout page */
+#card-errors {
+    color: var(--bs-danger-text-emphasis);
+    border-left: var(--bs-danger-text-emphasis);
+}
+
+.order-summary {
+    padding: 2px;
+    font-size: 0.9em;
+}
+
+.order-summary th {
+    background-color: #F5D3C2;
+}
+
+.order-summary td {
+    background-color: #F2DEE4;
+    font-family: var(--body-font);
+    font-size: small;
+}
+
+.order-summary .total-section {
+    font-family: var(--menu-font);
+    font-size: large;
+    color: #78695F;
+}
+
+.checkout-info legend {
+    font-family: var(--menu-font);
+    font-size: 2em;
+    color: #78695F;
+}
+
+.submit-button .change-order {
+    color: #F8FBF7;
+    background-color: #78695F;
+    border: 2px solid #F8FBF7;
+    font-family: var(--menu-font);
+}
+
+.submit-button .checkout {
+    background-color: #F8FBF7;
+    color: #78695F;
+    border: 2px solid #78695F;
+}
+
+.submit-button .checkout:hover {
+    color: #F8FBF7;
+    background-color: #78695F;
+    border: 2px solid #F8FBF7;
+}
+
+.checkout-info {
+    background-color: rgba(242, 222, 228, 0.2);
+}
+
+.checkout-info fieldset {
+    font-family: var(--body-font);
+}
+
+.form-control::placeholder {
+    color: #8EC4DB;
+}
+
+.btn-change {
+    border-radius: 5px;
+    background-color: #F2DEE4;
+    font-family: var(--menu-font);
+    color: #78695F;
+    padding: 5px;
+}
+
+.btn-change a {
+    text-decoration-line: none;
+}
+
+.submit-button .checkout {
+    margin: 5px;
+}
+
+.save-address {
+    color: #48778b;
+    font-family: var(--menu-font);
+}
+
+.payment-note {
+    color: #48778b;
+    background-color: rgba(142, 196, 219, 0.2);
+    border-left: #8EC4DB 5px solid;
+    margin: 5px;
+    padding-left: 2px;
+    padding: 5px;
+    width: 100%;
+}
+
+
+#loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(23, 162, 184, .85);
+    z-index: 9999;
+}
+
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+}
+
+/* css for checkout success */
+
+.checkout-title {
+    color: #F3BF93;
+    font-family: var(--menu-font);
+}
+
+.checkout-success-info {
+    color: #78695F;
+    background-color: rgba(242, 222, 228, 0.4);
+    text-align: center;
+}
+
+.checkout-success p {
+    text-align: center;
+}
+
+.checkout-success h4 {
+    color: #8EC4DB;
+    text-align: center;
+}
+
+/* css for register page */
+
+.loginregister {
+    background-color: rgba(242, 222, 228, 0.5);
+    color: #78695F;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+
+}
+
+.login-register li {
+    list-style-type: "\1F33C";
+}
+
+.loginregister a {
+    color: #8EC4DB;
+    text-decoration: none;
+}
+
+.loginregister input {
+    border: none;
+    border-radius: 5px;
+}
+
 /* css for logout page **/
 #logout {
     background: #F8FBF7;
@@ -544,8 +770,33 @@ option {
     height: 300px;
 }
 
+/* profile css */
+
+.update-btn {
+    background-color: #F5D3C2;
+    border: #78695F 2px solid;
+    color: #78695F;
+    font-family: var(--nav-font);
+}
+
 @media only screen and (max-width: 400px) {
     #logout img {
         height: 1cap;
+    }
+}
+
+
+@media only screen and (max-width:500px) {
+    .carousel-caption {
+        height: 50%;
+        width: 75%;
+        left: 0%;
+        font-size: 0.7rem;
+        overflow: hidden;
+        white-space: wrap;
+        text-overflow: ellipsis;
+    }
+    #hero-image-outer {
+        max-height:300px;
     }
 }
