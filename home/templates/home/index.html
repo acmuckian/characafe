@@ -36,7 +36,7 @@
             <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="10000">
                 <img src="{{ character.image.url }}" class="d-block w-50 mx-auto" alt="{{ character.name }}">
                 <div class="carousel-caption d-md-block">
-                    <h5><a href="">{{ character.name }}</a></h5>
+                    <h5><a href="{% url 'characters' %}">{{ character.name }}</a></h5>
                     <div class="carouselcaption mx-auto">{{ character.description }}</div>
                 </div>
             </div>

@@ -24,15 +24,15 @@
                 <p> {{ character.description }} </p>
                 <small> <i class="fa-solid fa-cake-candles"></i> {{ character.birthday }} </small>
                 <br>
-                <a href="{% url 'products' %}?character={{ character.name }}" class="chara-btn">Goods</a>
+                <a href="{% url 'products' %}?character={{ character.name }}" class="btn chara-btn">Goods</a>
                 <div class="interests">
                     <h5><i class="fa-solid fa-heart"></i>Likes<i class="fa-solid fa-heart"></i></h5>
                     <ul class="mx-auto">
-                        <li> {{ character.likes }} </li>
+                        <li class="mx-auto"> {{ character.likes }} </li>
                     </ul>
                     <h5><i class="fa-solid fa-heart-crack"></i>Dislikes<i class="fa-solid fa-heart-crack"></i></h5>
                     <ul class="mx-auto">
-                        <li>{{ character.dislikes }}</li>
+                        <li class="mx-auto">{{ character.dislikes }}</li>
                     </ul>
 
                 </div>

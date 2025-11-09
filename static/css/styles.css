@@ -197,17 +197,17 @@ p {
 }
 
 #location {
-    background-color:#8EC4DB;
-    color:#F8FBF7;
+    background-color: #8EC4DB;
+    color: #F8FBF7;
 }
 
 #location img {
-    float:left;
+    float: left;
 }
 
 #location ul {
     text-decoration: none;
-    border:2px solid #78695F;
+    border: 2px solid #78695F;
 }
 
 @keyframes menuitemchange {
@@ -246,7 +246,7 @@ p {
     text-align: center;
     color: #F8FBF7;
     font-family: var(--body-font);
-    width:75%;
+    width: 75%;
 }
 
 .toast-body {
@@ -315,7 +315,7 @@ h3 {
 
 .chara-btn {
     border-radius: 5px;
-    color: #FCFCC0;
+    color: #78695F;
     font-family: var(--menu-font);
     background-color: #FCFBA8;
     box-shadow: none;
@@ -326,7 +326,7 @@ h3 {
 }
 
 .chara-btn a {
-    color: #F3BF93;
+    color: #78695F;
     text-decoration: none;
 
 }
@@ -390,8 +390,8 @@ h3 {
     height: 200px;
     object-fit: cover;
     justify-content: center;
-    display:flex;
-    margin-bottom:2px;
+    display: flex;
+    margin-bottom: 2px;
 }
 
 
@@ -714,28 +714,29 @@ option {
     text-align: center;
 }
 
-/* css for register page */ 
+/* css for register page */
 
 .loginregister {
-    background-color:rgba(242, 222, 228, 0.5);
-    color:#78695F;
-    border-radius:15px;
-    margin-bottom:5px;
-    text-align:center;
+    background-color: rgba(242, 222, 228, 0.5);
+    color: #78695F;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    text-align: center;
 
 }
+
 .login-register li {
     list-style-type: "\1F33C";
 }
 
 .loginregister a {
-    color:#8EC4DB;
+    color: #8EC4DB;
     text-decoration: none;
 }
 
 .loginregister input {
-    border:none;
-    border-radius:5px;
+    border: none;
+    border-radius: 5px;
 }
 
 /* css for logout page **/
@@ -777,7 +778,13 @@ option {
 
 
 @media only screen and (max-width:500px) {
-    .carousel-caption p {
-        display:none;
+    .carousel-caption {
+        height: 50%;
+        width: 75%;
+        left: 0%;
+        font-size: 0.7rem;
+        overflow: hidden;
+        white-space: wrap;
+        text-overflow: ellipsis;
     }
 }
