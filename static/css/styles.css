@@ -52,6 +52,10 @@ body {
     color: #78695F;
 }
 
+.dropdown-menu {
+    background-color:#F5D3C2; 
+}
+
 .message-container {
     position: fixed;
     top: 40px;
