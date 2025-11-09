@@ -5,7 +5,7 @@
 
 <section id="hero-image-outer">
     <div id="hero-image">
-        <img src="{% static 'images/umm-e-hani-ali-RHikSfVAvss-unsplash.png' %}">
+        <img src="{% static 'images/umm-e-hani-ali-RHikSfVAvss-unsplash.png' %}" alt="background of yellow star pattern on white">
     </div>
     <div id="cover-text">
         <h1>Characters</h1>
@@ -24,13 +24,13 @@
                 <p> {{ character.description }} </p>
                 <small> <i class="fa-solid fa-cake-candles"></i> {{ character.birthday }} </small>
                 <br>
-                <button class="chara-btn"><a href="{% url 'products' %}?character={{ character.name }}">Goods</a></button>
+                <a href="{% url 'products' %}?character={{ character.name }}" class="chara-btn">Goods</a>
                 <div class="interests">
                     <h5><i class="fa-solid fa-heart"></i>Likes<i class="fa-solid fa-heart"></i></h5>
                     <ul class="mx-auto">
                         <li> {{ character.likes }} </li>
                     </ul>
-                    </h5><i class="fa-solid fa-heart-crack"></i>Dislikes<i class="fa-solid fa-heart-crack"></i></h5>
+                    <h5><i class="fa-solid fa-heart-crack"></i>Dislikes<i class="fa-solid fa-heart-crack"></i></h5>
                     <ul class="mx-auto">
                         <li>{{ character.dislikes }}</li>
                     </ul>
