@@ -3,7 +3,7 @@
 
 {% block content %}
 <!-- hero image -->
-<section id="hero-image-outer" role="hero image">
+<section id="hero-image-outer">
     <div id="hero-image">
         <img src="{% static 'images/jonathan-borba-pIO8zFpgL_s-unsplash-1.webp' %}" alt="image of a cafe">
     </div>
@@ -13,7 +13,7 @@
     </div>
 
 </section>
-<section id="character-section" role="character section">
+<section id="character-section">
     <h2>Characters</h2>
     {% if characters %}
     <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
@@ -26,7 +26,7 @@
             {% endif %}
             {% endfor %}
         </div>
-        <div class="carousel-inner" role="character-carousel">
+        <div class="carousel-inner">
             {% for character in characters %}
             {% if character.image %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="10000">
@@ -50,7 +50,7 @@
     </div>
     {% endif %}
 </section>
-<section id="menu" role="menu">
+<section id="menu">
     <div class="container">
         <div class="row justify-content-center">
             <div class="menu-caption mx-auto">
