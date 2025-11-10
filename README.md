@@ -7,11 +7,10 @@
 Characafe is a cafe with a menu based on five cute characters, as well as a variety of goods dedicated to these characters. 
 
 ## Table of Contents
-
-- [Features](#feature)
-- [UX Design](#UX)
-    - [Wireframes](#wireframes)
-    - [User Stories](#user-stories)
+- [Features](#features)
+- [UX Design](#ux-design)
+  - [Wireframes](#wireframes)
+  - [User Stories](#user-stories)
 - [Deployment](#deployment)
 - [Code Validation](#code-validation)
 - [Testing](#testing)
@@ -25,7 +24,7 @@ Characafe is a cafe with a menu based on five cute characters, as well as a vari
 
 The front page displays a carousel of the five characters, allowing the visitor to get an understanding of them, and some of the dishes on the menu.
 
-![front page screenshot]()
+![front page screenshot](media/characafefrontpage.png)
 
 There are three sections to the front page - 
 
@@ -88,7 +87,7 @@ This shows the product in detail, the description, technical details, being able
 This shows the shopping bag page for the amount of items the user has in the bag, allowing the user to change quantity of the iterms or to checkout securely. 
 
 
-## UX 
+## UX Design
 
 ### Colour Scheme 
 
@@ -97,7 +96,8 @@ The colour scheme for Characafe was derived from a poster of a Sanrio character,
 
 ### Typography 
 
-Characafe uses three main fonts; these fonts were selected on being cute and giving a vibe of a cute, cosy cafe. 
+Characafe uses three main fonts; these fonts were selected on being cute and giving a vibe of a cute, cosy cafe. For the navigation menu, some of the buttons and headers, Cherry Bomb One was used.
+For some of the buttons, text and features, was used. Comic Relief was used for most of the body text. 
 
 ### Wireframes 
 
@@ -105,7 +105,7 @@ _Home Page_
 
 * [main page desktop](https://wireframe.cc/0iwC3p)
 * [main page tablet](https://wireframe.cc/Bf2JI6)
-* [main page mobile](https://wireframe.cc/SiHKW5 )
+* [main page mobile](https://wireframe.cc/SiHKW5)
 
 _Products Page_
 
@@ -127,13 +127,19 @@ _Menu Page_
 
 _Profile Page_ 
 
-* [profile desktop]()
-* [profile tablet]() 
-* [profile mobile]()
+* [profile desktop](https://wireframe.cc/JUiQjQ)
+* [profile tablet](https://wireframe.cc/UuHNNo) 
+* [profile mobile](https://wireframe.cc/i1CxmV)
+
+_Checkout Page_
+
+* [checkout desktop](https://wireframe.cc/c0GPGA)
+* [checkout tablet](https://wireframe.cc/xAB8cM)
+* [checkout mobile](https://wireframe.cc/4zNVlf)
 
 ### Data Schema 
 
-![lucidchart screenshot]()
+![lucidchart screenshot](media/Characafe%20ERD.png)
 [Lucidchart](https://www.lucidchart.com/pages) was for the data schema for Characafe which uses a relational model, as illustrated in the Entity Relationship Diagram (ERD) provided. Above is an Entity Relationship Diagram that shows the key models and their fields.
 
 
@@ -157,7 +163,7 @@ _Profile Page_
 
 ### Agile Development 
 
-This project was managed and developed by using the Project Board and Issues section on GitHub - visit the project board [here.](https://github.com/users/acmuckian/projects/4)
+This project was managed and developed by using the Project Board and Issues section on GitHub - visit the project board [here.](https://github.com/users/acmuckian/projects/5). The user stories focus on the MoSCoW method as well to help prioritisation. 
 
 ## Deployment 
 
@@ -239,5 +245,13 @@ Please refer to the [testing page](TESTING.md) for information about testing and
 - For the basis of this website, sites like [Pokemon Cafe](https://www.pokemon-cafe.jp/) was influential in determining the style and aesthetic. 
 - [Unsplash](https://unsplash.com/) was used to source some of the images. 
 
+## Technologies Used
+- Django, Python, PostgreSQL, Stripe, Cloudinary, Bootstrap
 
+## Accessibility
+- Semantic HTML, alt text for images (pending completion), color contrast checked.
+
+## Future Enhancements
+- Being able to book reservations for the cafe on the website 
+- Product review by star ratings for users 
 

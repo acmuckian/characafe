@@ -46,11 +46,11 @@ The website was tested on different mobiles and tablets, including by using Goog
 
 [HTML W3C Validator](https://validator.w3.org/nu/) was used to validate the HTML files. 
 
-* [Home Page]() - no errors/warnings found 
+* [Home Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2F) - no errors/warnings found 
 * [Menu Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Fmenu) - no errors found
 * [Products Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Fproducts) - no errors found
 * [Product Detail Page]() - no errors/warnings found
-* [Wishlist Page]() - 
+* [Wishlist Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Fproducts%2Fwishlist%2F) - no errors, one info on an input tag 
 * [Checkout Page]() - 
 * [Profile Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Fprofiles%2F) - one info on input tag, no errors 
 * [Contact Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Fcontact%2F) - errors related to crispy forms formulation and it couldn't be avoided with time constraints 

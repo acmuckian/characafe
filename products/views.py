@@ -13,6 +13,10 @@ from .forms import CommentForm
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
     products = Product.objects.all()
+    if request.user.is_authenticated:
+        wishlist_ids = list(request.user.wishlist.values_list('id', flat=True))
+    else:
+        wishlist_ids = []
     query = None
     character = None
     sort = None
@@ -60,6 +64,7 @@ def all_products(request):
         'search_term': query,
         'current_character': character,
         'current_sorting': sorting_label,
+        'wishlist_ids': wishlist_ids,
     }
 
     return render(request, 'products/products.html', context)

@@ -54,7 +54,7 @@
                 <a href="{% url 'product_detail' product.slug %}"><img src="{{ product.image.url }}"
                         class="card-img-top" alt="{{ product.description }}"></a>
                 {% if user.is_authenticated %}
-                {% if product.slug in wishlist_ids %}
+                {% if product.id in wishlist_ids %}
                 <a href="{% url 'add_to_wishlist' product.slug %}" class="wishlist-icon"><i
                         class="fa-solid fa-heart-circle-minus"></i> </a>
                 {% else %}
