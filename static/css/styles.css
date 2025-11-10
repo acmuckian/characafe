@@ -33,8 +33,7 @@ body {
     background-position: 0% 0%;
     width: 100%;
     background-attachment: scroll;
-    margin-top: auto;
-    margin: auto;
+    margin-top:auto;
     text-align: center;
     color: #78695F;
 }
@@ -429,7 +428,7 @@ h3 {
     background-color: #F8FBF7;
     padding: 5px;
     border-radius: 50px;
-    border-color: #F5D3C2 3px solid;
+    border: #F5D3C2 3px solid;
     position: relative;
     right: calc(-100% + 50px);
     top: -50px;
@@ -519,6 +518,10 @@ option {
 
 .product-detail-section h3 {
     color: #F3BF93;
+}
+
+.comment-section h4 {
+    color:#78695F; 
 }
 
 .shop-now-bg {

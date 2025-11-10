@@ -103,10 +103,10 @@ $(document).ready(function () {
                         form.submit();
                     }
                 }
-            })
+            });
         }).fail(function () {
             // just reload the page, the error will be in django messages
             location.reload();
-        })
-    })
+        });
+    });
 });

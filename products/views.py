@@ -85,7 +85,7 @@ def product_detail(request, slug):
             comment = form.save(commit=False)
             comment.post = product
             comment.commenter = request.user
-            comment.approved = True  # or False if moderation needed
+            comment.approved = False
             comment.save()
             return redirect('product_detail', slug=product.slug)
     else:

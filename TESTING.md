@@ -54,18 +54,20 @@ The website was tested on different mobiles and tablets, including by using Goog
 * [Checkout Page]() - 
 * [Profile Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Fprofiles%2F) - one info on input tag, no errors 
 * [Contact Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Fcontact%2F) - errors related to crispy forms formulation and it couldn't be avoided with time constraints 
-* [Login Page]() - 
+* [Login Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Faccounts%2Flogin%2F) - no errors found 
 * [Sign Up Page]() - 
 * [Logout Page]() - 
 
 
 ### Javascript 
 
-[JSHint](https://jshint.com/) was used to check the validity of the javascript on stripe_elements.js 
+[JSHint](https://jshint.com/) was used to check the validity of the javascript on stripe_elements.js - one note that stripe was not a defined variable. 
+
+No errors on the javascript in the product_detail or products pages. 
 
 ### CSS 
 
-[Jigsaw CSS](https://jigsaw.w3.org/css-validator/) was used to validate the CSS via a direct upload of the styles.css file. There were no errors and 8 warnings. 
+[Jigsaw CSS](https://jigsaw.w3.org/css-validator/) was used to validate the CSS via a direct upload of the styles.css file. There were no errors and 42 warnings. 
 
 ### Python 
 
@@ -105,11 +107,27 @@ The website was tested on different mobiles and tablets, including by using Goog
 
 ### Automated Testing 
 
-Automated testing was performed for some of views and forms for both img and contact. Due to time constraints, only six tests were made - these six tests passed with OK. 
+Automated testing was not completed for this project. 
 
-### Manual Testing
+## Manual Testing
 
+### User Stories Testing 
 
+| As a shopper I can view products so that I can select a product to buy                                                   | ![products page screenshot](media/shoppage.png)              |
+|--------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| As a shopper I can view specific details of the product, including the description, details, price                       | ![product detail page](media/product_detail_section.png)     |
+| As a shopper I can see my cart and no. of products on all pages so that avoid adding too much                            | ![shopping bag page](media/shoppingbagpage.png)              |
+| As a site owner, I want shoppers to have the ability to add to bag even when on the main products page for easy shopping | ![products page screenshot](media/shoppage.png)              |
+| As a shopper, I would like to get a notification from the site when I add products, remove product, update the quantity  | ![toast notification](products/toastbag.png)                 |
+| As a user, I would like to create a wishlist so I favourite products I'd like to buy in the future                       | Yes                                                          |
+| As a user, I'd like to see what goods are added to the wishlist                                                          | Yes                                                          |
+| As a shopper I'd like to see similar products to the product I am looking at                                             | ![similar products section](media/similarproducts.png)       |
+| As a shopper I would like to be able to check out using a secure method for payment                                      | Yes                                                          |
+| As a visitor, I would like to see a list of all the characters                                                           | ![character display screenshot](media/character-section.png) |
+| As a visitor to the site, I would like to see what goods are associated with the characters                              | ![character display screenshot](media/character-section.png) |
+| as a visitor I'd like to add reviews to a product and see reviews                                                        | ![reviews section](media/reviews.png)                        |
+| As a user, I would like to see my previous order history                                                                 | ![order history](media/order-history.png)                   |
+| As a user, I'd like to see where the cafe is located and its opening hours                                               | ![front page location section](media/location-section.png)   |
 
 ## Features Testing 
 |                         **Home   Page**                         |            |
