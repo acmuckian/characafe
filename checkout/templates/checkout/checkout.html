@@ -17,10 +17,10 @@
                 <table class="table table-sm table-borderless">
                     <thead>
                         <tr>
-                            <th scope="col">Product Info</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                            <th></th>
+                            <th>Quantity</th>
                             <th scope="col">Subtotal</th>
                         </tr>
                     </thead>
@@ -39,7 +39,7 @@
                             <p class="my-0">€{{ item.product.price }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">€{{ item.quantity }}</p>
+                            <p class="my-0">{{ item.quantity }}</p>
                         </td>
                         <td class="py-3">
                             <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity|floatformat:2 }}</p>
@@ -52,7 +52,7 @@
                             <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
                         </td>
                         <td colspan="2">
-                            <h4 class="mt-4"><strong>Grand Total: € {{ grand_total|floatformat:2 }}</strong></h4>
+                            <h4 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
                         </td>
                     </tr>
                 </table>
@@ -86,8 +86,8 @@
                         <input type="checkbox" id="save-address" name="save-address" checked>
                         {% else %}
                         <label for="save-address">
-                            <a href="{% url 'account_signup' %}">Create an account</a>
-                            <a href="{% url 'account_login' %}">Login</a> to save this information
+                            <a href="{% url 'account_signup' %}" class="btn btn-secondary">Create an account</a> or 
+                            <a href="{% url 'account_login' %}" class="btn btn-secondary">Login</a> to save this information
                         </label>
                         {% endif %}
                     </div>

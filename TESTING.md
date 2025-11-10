@@ -173,4 +173,19 @@ Automated testing was performed for some of views and forms for both img and con
 | Unable   to add to bag for unavailable products                          | Yes        |
 | Adding   to wishlist notifies you it was added to wishlist               | Yes        |
 
+| **Checkout   Page**                                                                                              |            |
+|------------------------------------------------------------------------------------------------------------------|------------|
+| **Feature**                                                                                                      | **Status** |
+| cannot   complete order without putting in name, email, phone no., street address,   town/city, county, country  | Yes        |
+| cannot   complete order without card details                                                                     | Yes        |
+| cannot   put in an invalid card number                                                                           | Yes        |
+| told   correct amount charged                                                                                    | Yes        |
+| side   column shows my orders, the product, name, quantity, sub-total and the total                              | Yes        |
+| successful   details completion triggers loading overlay and checkout success page                               | Yes        |
+| **Checkout   Success Page **                                                                                     |            |
+| toast   shows my order no and that confirmation email sent                                                       | Yes        |
+| order   shows my delivery information as I inserted it                                                           | Yes        |
+| billing   info shows the amount, delivery fee, grand total                                                       | Yes        |
+| clicking   rest of range button brings to product page                                                           | Yes        |
+
 ## Bugs 
