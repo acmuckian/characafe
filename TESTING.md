@@ -62,7 +62,7 @@ The website was tested on different mobiles and tablets, including by using Goog
 * [Profile Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Fprofiles%2F) - one info on input tag, no errors 
 * [Contact Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Fcontact%2F) - errors related to crispy forms formulation and it couldn't be avoided with time constraints 
 * [Login Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Faccounts%2Flogin%2F) - no errors found 
-* [Sign Up Page]() - 
+* [Sign Up Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Faccounts%2Fsignup) - some errors were related to the allauth and to avoid disrupting functionality, it was left as-is
 * [Logout Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcharacafe-1eb4a9dff267.herokuapp.com%2Faccounts%2Flogout) - no errors found 
 
 
