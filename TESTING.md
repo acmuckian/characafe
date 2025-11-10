@@ -11,6 +11,13 @@
    - [Manual Testing](#manual-testing)
   - [Features Testing](#features-testing)
 
+## Test Environment
+- Django 5.2.7, Python 3.12
+- DB: Postgres (Heroku)
+- Media: Cloudinary
+- Static: WhiteNoise
+- Email: SMTP (Gmail) in production; console backend in development
+- Stripe: Test mode with webhooks
 
 ## Performance
 
@@ -18,9 +25,9 @@
 
 [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) was used to test the performance of the website.
 
-![screenshot of google lighthouse desktop score]()
+![screenshot of google lighthouse desktop score](media/mainpagelighthouse.png)
 
-The main limitation was file sizes - particularly since this is an image board website since users can upload files which are quite large. In future, attempts will be made to limit 
+The main limitation was file sizes - particularly since this is an e-commerce website since users could in the future can upload files which are quite large. In future, attempts will be made to limit 
 
 ## Browser Compatibility
 
@@ -79,7 +86,7 @@ No errors on the javascript in the product_detail or products pages.
 - _forms.py_ - no errors found
 - _models.py - no errors found 
 - _signals.py_ - no errors found 
-- _views.py_ - 
+- _views.py_ - no errors found
 
 **Products** 
 
@@ -90,7 +97,7 @@ No errors on the javascript in the product_detail or products pages.
 
 **Bag**
 
-- 
+- _views.py - no errors found
 
 
 **Home**
@@ -206,4 +213,22 @@ Automated testing was not completed for this project.
 | billing   info shows the amount, delivery fee, grand total                                                       | Yes        |
 | clicking   rest of range button brings to product page                                                           | Yes        |
 
+| **User   Registratiom**                                                                     |            |
+|---------------------------------------------------------------------------------------------|------------|
+| **Feature**                                                                                 | **Status** |
+| When   registering, the user gets a page to state an email is being sent for   verification | Yes        |
+| Password   cannot be too short/weak                                                         | Yes        |
+| User   receives an email if valid email address given                                       | Yes        |
+| Clicking   on the email link verifies the user                                              | Yes        |
+| Only   logged in users can see the wishlist icons                                           | Yes        |
+| Only   logged in users can see their own profile/order history                              | Yes        |
+| Logging   out logs out user successfully                                                    | Yes        |
+
 ## Bugs 
+
+| **Bugs**                                                       |                                                                                                                                                                             |
+|----------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Bug**                                                        | **Fix**                                                                                                                                                                     |
+| Logged   out users could not see the cart                      | The {% if user.is_authenticated   %} was wrapped over the cart as well, so this was moved so logged-out users   can see their cart too                                      |
+| The   footer was not behaving on the log-out or register pages | The base.html wraps the block   content in a div with the .container class, so an extra .container class   disrupted the footer being pushed to the bottom                  |
+| users could not verify their emails                            | The confirm_email html had been   amended and the logic removed, so there was no form POST feature to let the   site know the user verified their email - this was resolved |
