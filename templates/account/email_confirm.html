@@ -1,14 +1,23 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% load static %}
 {% block content %}
-
-
-    <div class="row">
-        <div class="col-md-6 offset-md-3 loginregister">
-            <h2>Thanks for verifying your email adress!</h2>
-            <p> Please sign in below: </p>
-                <a href="{% url 'account_login' %}" class="btn btn-secondary">Sign In</a> 
-        </div>
-
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 loginregister">
+      {% if confirmation %}
+        <h2>{% trans "Confirm Email Address" %}</h2>
+        <p>{% trans "Please confirm that" %} <strong>{{ confirmation.email_address.email }}</strong>
+           {% trans "belongs to user" %} <strong>{{ confirmation.email_address.user }}</strong>.</p>
+        <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-secondary">{% trans "Confirm" %}</button>
+        </form>
+      {% else %}
+        <h2>{% trans "Email Confirmation Problem" %}</h2>
+        <p>{% trans "This confirmation link is invalid or expired." %}</p>
+        <a class="btn btn-secondary" href="{% url 'account_email' %}">{% trans "Resend" %}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
 {% endblock content %}
