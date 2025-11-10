@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load static %}
+{% block content %}
 
 <div class="container">
     <div class="row">
@@ -10,4 +11,4 @@
                 <a href="{% url 'account_login' %}" class="btn btn-secondary">Sign In</a> 
         </div>
     </div>
-    {% endblock content %}
+{% endblock content %}
