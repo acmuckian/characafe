@@ -1,13 +1,15 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpResponseRedirect
-from django.db.models.functions import Lower 
+from django.shortcuts import render, get_object_or_404, redirect
+from django.db.models.functions import Lower
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.urls import reverse
+
 from .models import Product, Comment
 from home.models import Character
 from .forms import CommentForm
 
-# Create your views here.
+
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
     products = Product.objects.all()
@@ -15,9 +17,8 @@ def all_products(request):
     character = None
     sort = None
     direction = None
-   
 
-    if request.GET: 
+    if request.GET:
         if 'character' in request.GET:
             character_name = request.GET['character'].lower()
             try:
@@ -26,16 +27,19 @@ def all_products(request):
             except Character.DoesNotExist:
                 pass
 
-
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = (
+                Q(name__icontains=query)
+                | Q(description__icontains=query)
+            )
             products = products.filter(queries)
-        
+
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -48,16 +52,19 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
+    sorting_label = (
+        f"{sort}_{direction}" if sort and direction else sort
+    )
     context = {
         'products': products,
         'search_term': query,
         'current_character': character,
-        'current_sorting': f'{sort}_{direction}' if sort and direction else sort,
+        'current_sorting': sorting_label,
     }
 
     return render(request, 'products/products.html', context)
-    
+
+
 def product_detail(request, slug):
     """
     Display individual product details
@@ -67,7 +74,10 @@ def product_detail(request, slug):
     edit_comment = None
     edit_form = None
 
-    related_products = Product.objects.filter(character=product.character).exclude(id=product.id)
+    related_products = (
+        Product.objects
+        .filter(character=product.character).exclude(id=product.id)
+    )
 
     if request.method == "POST" and request.user.is_authenticated:
         form = CommentForm(request.POST)
@@ -90,14 +100,14 @@ def product_detail(request, slug):
             edit_form = CommentForm(instance=edit_comment)
         except Comment.DoesNotExist:
             pass
-    
+
     comments = product.comments.all()
 
     if request.user.is_authenticated:
         wishlist_ids = request.user.wishlist.values_list('id', flat=True)
     else:
         wishlist_ids = []
-   
+
     context = {
         'product': product,
         'related_products': related_products,
@@ -107,8 +117,9 @@ def product_detail(request, slug):
         'edit_comment': edit_comment,
         'edit_form': edit_form,
     }
-    
+
     return render(request, 'products/product_detail.html', context)
+
 
 @login_required
 def add_to_wishlist(request, slug):
@@ -158,6 +169,7 @@ def my_wishlist(request):
         {"wishlist": wishlist}
     )
 
+
 @login_required
 def comment_edit(request, slug, comment_id):
     product = get_object_or_404(Product, slug=slug)
@@ -178,7 +190,8 @@ def comment_edit(request, slug, comment_id):
     comments = product.comments.all()
     context = {
         'product': product,
-        'related_products': Product.objects.filter(character=product.character).exclude(id=product.id),
+        'related_products': Product.objects.filter(
+            character=product.character).exclude(id=product.id),
         'comments': comments,
         'comment_form': CommentForm(),
         'edit_comment': comment,
@@ -186,6 +199,7 @@ def comment_edit(request, slug, comment_id):
         'wishlist_ids': request.user.wishlist.values_list('id', flat=True),
     }
     return render(request, 'products/product_detail.html', context)
+
 
 @login_required
 def comment_delete(request, slug, comment_id):
@@ -197,4 +211,3 @@ def comment_delete(request, slug, comment_id):
         comment.delete()
         messages.info(request, "Comment deleted.")
     return redirect('product_detail', slug=slug)
-

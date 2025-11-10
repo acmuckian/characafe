@@ -69,7 +69,36 @@ The website was tested on different mobiles and tablets, including by using Goog
 
 [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python code by PEP8 standards.
 
+**Checkout**
+
+- _admin.py_ - no errors found
+- _forms.py_ - no errors found
+- _models.py - no errors found 
+- _signals.py_ - no errors found 
+- _views.py_ - 
+
+**Products** 
+
+- _admin.py_ - no errors found
+- _forms.py_ - no errors found 
+- _models.py_ - no errors found
+- _views.py_ - no errors found 
+
+**Bag**
+
 - 
+
+
+**Home**
+
+- _models.py_ - no errors found 
+- _views.py_ - no errors found 
+
+**Contact** 
+
+- _forms.py_ - no errors found
+- _models.py_ - no errors found 
+- _views.py_ - no errors found 
 ## Testing 
 
 ### Automated Testing 
@@ -127,4 +156,19 @@ Automated testing was performed for some of views and forms for both img and con
 | must be   an email address for subscription                                                                 | Yes        |
 | clicking   submit triggers a modal notification for the subscription                                        | Yes        |
 | clicking   submit triggers a modal notification for the message being sent                                  | Yes        |
+
+| **Products   Detail Page**                                              |            |
+|--------------------------------------------------------------------------|------------|
+| **Feature**                                                              | **Status** |
+| Cannot add quantity below 0                                              | Yes        |
+| Clicking   keep shopping returns to shop main page                       | Yes        |
+| Clicking add to bag adds item to bag                                     | Yes        |
+| Clicking add to bag shows toast                                          | Yes        |
+| "You   might also like" shows items with that character in it            | Yes        |
+| A visitor can add a comment                                              | Yes        |
+| A   visitor can edit or delete their comment                             | Yes        |
+| Clicking   on a related product image brings user to product's home page | Yes        |
+| Unable   to add to bag for unavailable products                          | Yes        |
+| Adding   to wishlist notifies you it was added to wishlist               | Yes        |
+
 ## Bugs 

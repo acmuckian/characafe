@@ -5,19 +5,18 @@ from .models import Character, MenuItem
 # Create your views here.
 
 
-
 def index(request):
     """ A view to return the index page """
     characters = Character.objects.all()[:6]
-    menu_items = MenuItem.objects.all()[:6]  
+    menu_items = MenuItem.objects.all()[:6]
 
     context = {
         'characters': characters,
         'menu_list': menu_items,
     }
-    
-    
+
     return render(request, 'home/index.html', context)
+
 
 class CharacterList(generic.ListView):
     model = Character
@@ -25,6 +24,7 @@ class CharacterList(generic.ListView):
     template_name = "home/characters.html"
     paginate_by = 6
     context_object_name = 'characters'
+
 
 class MenuItemList(generic.ListView):
     model = MenuItem

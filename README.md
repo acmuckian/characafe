@@ -6,6 +6,18 @@
 
 Characafe is a cafe with a menu based on five cute characters, as well as a variety of goods dedicated to these characters. 
 
+## Table of Contents
+
+- [Features](#feature)
+- [UX Design](#UX)
+    - [Wireframes](#wireframes)
+    - [User Stories](#user-stories)
+- [Deployment](#deployment)
+- [Code Validation](#code-validation)
+- [Testing](#testing)
+- [Credits](#credits)
+
+
 ## Features 
 
 ### Home Page 
@@ -25,7 +37,9 @@ A carousel showing the characters that are the feature of the website.
 
 The menu with menu items. 
 
-![front page location section]()
+![front page location section](media/location-section.png)
+
+This shows the location, the opening hours and a character encouraging people to visit. 
 
 ### Navbar
 
@@ -45,49 +59,45 @@ Both versions will show the cart and the number of the items that are currently 
 
 ### Characters Page 
 
-![character display screenshot]()
+![character display screenshot](media/character-section.png)
 
 This is the page displaying the five characters so users can learn more about them, their likes, dislikes, birthday etc. There is also a button to see goods of these characters so users can buy them. 
 
 ### Menu Page 
 
-![menu page screenshot](static/images/submitimagepage.png)
+![menu page screenshot](media/menusection.png)
 
 This page allows a user to look at what is currently on the menu. 
 
 ### Products page 
 
-![products page screenshot](static/images/contactuspage.png)
+![products page screenshot](media/shoppage.png)
 
 This page allows a visitor or a user to view all the products, as well as sort products by character. Prices are listed and users, if in a rush, can buy a product on this page by pressing the button or click on the product name or image to find out more information.
 
-### Login Page 
+### Product Detail Page 
 
-![login page screenshot](static/images/signinpage.png)
+![product detail page](media/product_detail_section.png)
 
-This is the page to allow a user to log in by entering their email and password.
+This shows the product in detail, the description, technical details, being able to add a review, and also any related images for the user to browse. 
 
-### Signout Page 
-![signout page screenshot](static/images/signoutsection.png)
-This is a page to confirm with the user if they want to log out or not. 
+### Shopping Bag Page 
 
-### Signup Page 
+![shopping bag page](media/shoppingbagpage.png)
 
-![sign up page screenshot](static/images/signuppage.png)
+This shows the shopping bag page for the amount of items the user has in the bag, allowing the user to change quantity of the iterms or to checkout securely. 
 
-This is for visitors to register for an account with the website. 
 
 ## UX 
 
 ### Colour Scheme 
 
-![Characafe Palette](static/images/)
-
+![Characafe Palette](media/characafe%20palette.png)
 The colour scheme for Characafe was derived from a poster of a Sanrio character, as I wanted the colour scheme to be cute but still good for accessibility purposes, with a variety of colours. 
 
 ### Typography 
 
-The Friendcurate logo is in the [Rubik 80s Fade](https://fonts.google.com/specimen/Rubik+80s+Fade) font. The main header font for the main headers is [Cabin Sketch](https://fonts.google.com/specimen/Cabin+Sketch) - to reflect the art element of the website. Some of the headings use the [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P) to give a cool, retro feel to the website and accompanies the Rubik 80s Fade font. 
+Characafe uses three main fonts; these fonts were selected on being cute and giving a vibe of a cute, cosy cafe. 
 
 ### Wireframes 
 
@@ -123,26 +133,27 @@ _Profile Page_
 
 ### Data Schema 
 
-![lucidchart screenshot](static/images/friendcurate%20chart.png)
+![lucidchart screenshot]()
 [Lucidchart](https://www.lucidchart.com/pages) was for the data schema for Characafe which uses a relational model, as illustrated in the Entity Relationship Diagram (ERD) provided. Above is an Entity Relationship Diagram that shows the key models and their fields.
 
 
 
 ### User Stories
 
-1. As a visitor to the site, I can create an account so I can comment on images, edit my comments and add images myself.
-
-2. As a user, I can add images that other users can comment on and add to their favourites. 
-
-3. As an admin, I can check images and captions, comments to make sure they are okay and up to date and approved. 
-
-4. As a user, I can add images to my favourites collection and to be able to view my collection. 
-
-5. As a user, I can sign in to the website so that I can access my account and enjoy customized features and contents.
-
-6. As a user, I can sign out of the website when I finished using it for now.
-
-7. As a site owner, I want to encourage visitors to become users of the website. 
+| As a shopper I can view products so that I can select a product to buy                                                   | Must    |
+|--------------------------------------------------------------------------------------------------------------------------|---------|
+| As a shopper I can view specific details of the product, including the description, details, price                       | Must    |
+| As a shopper I can see my cart and no. of products on all pages so that avoid adding too much                            | Must    |
+| As a site owner, I want shoppers to have the ability to add to bag even when on the main products page for easy shopping | Must    |
+| As a shopper, I would like to get a notification from the site when I add products, remove product, update the quantity  | Should  |
+| As a user, I would like to create a wishlist so I favourite products I'd like to buy in the future                       | Should  |
+| As a user, I'd like to see what goods are added to the wishlist                                                          | Should  |
+| As a shopper I'd like to see similar products to the product I am looking at                                             | Should  |
+| As a shopper I would like to be able to check out using a secure method for payment                                      | Must    |
+| As a visitor, I would like to see a list of all the characters                                                           | Must    |
+| As a visitor to the site, I would like to see what goods are associated with the characters                              | Should  |
+| as a visitor I'd like to add reviews to a product and see reviews                                                        | Should  |
+| As a user, I would like to see my previous order history                                                                 | Should  |
 
 ### Agile Development 
 
@@ -150,7 +161,7 @@ This project was managed and developed by using the Project Board and Issues sec
 
 ## Deployment 
 
-The live deployed application can be found on [Heroku](https://friendcurate-e7f12440f18f.herokuapp.com/).
+The live deployed application can be found on [Heroku](https://characafe-1eb4a9dff267.herokuapp.com/).
 
 ### 
 
@@ -193,6 +204,9 @@ The repository can also be cloned for local deployment. To clone the repository:
 | DISABLE_COLLECTSTATIC | _1 (mainly used only during initial setup)_ |
 | CLOUDINARY_URL        | user's own value             |
 | SECRET_KEY            | user's own value             |
+| STRIPE_PUBLIC_KEY     | user's own value             |
+| STRIPE_SECRET_KEY     | user's own value              |
+| STRIPE_WH_SECRET      | user's own value              |
 
 6. Ensure procfile is in the repository as required by Heroku - install with 
 `echo web: gunicorn app_name.wsgi > Procfile`
@@ -220,9 +234,9 @@ Please refer to the [testing page](TESTING.md) for information about testing and
 
 - [Very Academy](https://www.youtube.com/@veryacademy)'s youtube tutorial _Learn Django 3_ has been useful for features like the user profile, and creating a favourites feature.
 - [Django](https://www.djangoproject.com/)'s official documentation was also very helpful. 
-- [Stack Overflow](https://stackoverflow.com/questions) and Copilot GPT-4.1 in the Visual Studio Code Desktop were both useful for debugging errors. 
-- [Code Institute](https://codeinstitute.net/)'s tutorial on setting up a blog using Django was extremely helpful and the basis of my project. 
-- For the basis of this website, sites like [Art Fight](https://artfight.net/) and [DeviantArt](https://www.deviantart.com/) were influential. 
+- [Stack Overflow](https://stackoverflow.com/questions) and Copilot GPT-5 in the Visual Studio Code Desktop were both useful for debugging errors. 
+- [Code Institute](https://codeinstitute.net/)'s tutorial on setting up an e-commerce site using Django was extremely helpful and the basis of my project. 
+- For the basis of this website, sites like [Pokemon Cafe](https://www.pokemon-cafe.jp/) was influential in determining the style and aesthetic. 
 - [Unsplash](https://unsplash.com/) was used to source some of the images. 
 
 

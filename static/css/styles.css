@@ -208,8 +208,11 @@ p {
 
 #location img {
     float: left;
+    max-height:200px;
 }
-
+#location h2 {
+    color:#FCFCC0; 
+}
 #location ul {
     text-decoration: none;
     border: 2px solid #78695F;

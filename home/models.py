@@ -4,22 +4,31 @@ from django.utils import timezone
 
 # Create your models here.
 
+
 class Character(models.Model):
-    name = models.CharField(max_length=200, unique=True, blank=False, null=False)
+    name = models.CharField(
+        max_length=200, unique=True, blank=False, null=False)
     image = models.ImageField(upload_to='characters/', blank=True, null=True)
-    description = models.CharField(max_length=1000, unique=True, blank=False, null=False)
+    description = models.CharField(
+        max_length=1000, unique=True, blank=False, null=False)
     birthday = models.DateField(default=timezone.now)
-    colour = models.CharField(max_length=200, blank=False, null=False, default="Red")
-    likes = models.CharField(max_length=200, unique=True, blank=False, null=False, default=None)
-    dislikes = models.CharField(max_length=200, unique=True, blank=False, null=False, default=None)
+    colour = models.CharField(
+        max_length=200, blank=False, null=False, default="Red")
+    likes = models.CharField(
+        max_length=200, unique=True, blank=False, null=False, default=None)
+    dislikes = models.CharField(
+        max_length=200, unique=True, blank=False, null=False, default=None)
 
     def __str__(self):
         return self.name
-    
+
+
 class MenuItem(models.Model):
-    name = models.CharField(max_length=200, unique=True, blank=False, null=False)
+    name = models.CharField(
+        max_length=200, unique=True, blank=False, null=False)
     image = models.ImageField(upload_to='menu_items/', blank=True, null=True)
-    description = models.CharField(max_length=1000, unique=True, blank=False, null=False)
+    description = models.CharField(
+        max_length=1000, unique=True, blank=False, null=False)
 
     def __str__(self):
         return self.name
