@@ -41,7 +41,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light" role="navigation">
         <div class="container-fluid" id="header">
             <img src="{% static 'images/characafelogo.png' %}" alt="logo for characafe">
             <a class="navbar-brand" id="nav-title" href="/">CharaCafe</a>
@@ -80,7 +80,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link position-relative" href="{% url 'shopping_bag' %}"
-                            id="bag"><i class="fa-solid fa-basket-shopping"></i>
+                            id="bag" aria-label="shopping bag"><i class="fa-solid fa-basket-shopping"></i>
                             {% if product_count > 0 %}
                             <span
                                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
@@ -144,7 +144,7 @@
 
     <!-- Footer -->
 
-    <footer class="text-center footer">
+    <footer class="text-center footer" role="footer">
         <div class="container">
             <div class="row">
                 <p class="col-12 col-md-4 mb-3 mb-md-0 text-center footer-p">
