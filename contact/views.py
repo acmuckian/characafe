@@ -5,7 +5,7 @@ from .forms import NewsletterForm, ContactForm
 
 def subscribe(request):
     if request.method == "POST":
-        form = NewsletterForm(request.POST)
+        form = NewsletterForm(request.POST, prefix="newsletter")
         if form.is_valid():
             form.save()
             return redirect(reverse("contact") + "?subscribed=1")
@@ -13,7 +13,7 @@ def subscribe(request):
 
 def contact_us(request):
     if request.method == "POST":
-        form = ContactForm(request.POST)
+        form = ContactForm(request.POST, prefix="contact")
         if form.is_valid():
             form.save()
             return redirect(reverse("contact") + "?contacted=1")
