@@ -14,7 +14,7 @@
             </p>
             <form method="post" action="{% url 'subscribe' %}">
                 {% csrf_token %}
-                {{ subscribe_form|crispy }}
+                {{ newsletter_form|crispy }}
                 <button type="submit" class="btn btn-secondary">Subscribe</button>
             </form>
         </div>
