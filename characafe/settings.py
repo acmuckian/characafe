@@ -29,7 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# Allow enabling debug locally via the DEBUG environment variable (eg. DEBUG=True)
+# SECURITY WARNING: don't run with debug turned on in production!
+# Only enable DEBUG if the DEBUG environment variable is explicitly set to 'True'.
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
