@@ -1,5 +1,3 @@
-from contact.forms import NewsletterForm
-
 def newsletter_form(request):
     """
     Return a newsletter form for templates. Import forms lazily so importing

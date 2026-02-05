@@ -1,5 +1,3 @@
-from .forms import NewsletterForm
-
 def newsletter_form(request):
     try:
         # lazy import so broken forms module doesn't crash app import
