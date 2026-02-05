@@ -29,7 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# Allow enabling debug locally via the DEBUG environment variable (eg. DEBUG=True)
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -96,7 +97,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
                 'bag.contexts.bag_contents',
-                'home.context_processors.subscribe_form',
+                'home.context_processors.newsletter_form',
                 'contact.context_processors.newsletter_form',
             ],
             'builtins': [
