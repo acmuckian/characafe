@@ -24,19 +24,19 @@ Characafe is a cafe with a menu based on five cute characters, as well as a vari
 
 The front page displays a carousel of the five characters, allowing the visitor to get an understanding of them, and some of the dishes on the menu.
 
-![front page screenshot](media/characafefrontpage.png)
+![front page screenshot](docs/images/characafefrontpage.png)
 
 There are three sections to the front page - 
 
-![front page carousel](media/characafe-carousel.png)
+![front page carousel](docs/images/characafe-carousel.png)
 
 A carousel showing the characters that are the feature of the website. 
 
-![front page menu](media/menu-characafe.png)
+![front page menu](docs/images/menu-characafe.png)
 
 The menu with menu items. 
 
-![front page location section](media/location-section.png)
+![front page location section](docs/images/location-section.png)
 
 This shows the location, the opening hours and a character encouraging people to visit. 
 
@@ -46,11 +46,11 @@ The navigation bar changes depending on whether a user is logged in or not.
 
 When logged out, the visitor/user shall see the home page, the option to login or sign up to use the website. 
 
-![navbar when logged out screenshot](media/characafe-navbar.png)
+![navbar when logged out screenshot](docs/images/characafe-navbar.png)
 
 When logged in, the user will see their username and avatar with a drop down for their profile, wishlist and logout page. 
 
-![navbar when logged in screenshot](media/characafe-navbar-logged.png)
+![navbar when logged in screenshot](docs/images/characafe-navbar-logged.png)
 
 Both versions will show the cart and the number of the items that are currently in the user's cart at any given time. 
 
@@ -58,31 +58,31 @@ Both versions will show the cart and the number of the items that are currently 
 
 ### Characters Page 
 
-![character display screenshot](media/character-section.png)
+![character display screenshot](docs/images/character-section.png)
 
 This is the page displaying the five characters so users can learn more about them, their likes, dislikes, birthday etc. There is also a button to see goods of these characters so users can buy them. 
 
 ### Menu Page 
 
-![menu page screenshot](media/menusection.png)
+![menu page screenshot](docs/images/menusection.png)
 
 This page allows a user to look at what is currently on the menu. 
 
 ### Products page 
 
-![products page screenshot](media/shoppage.png)
+![products page screenshot](docs/images/shoppage.png)
 
 This page allows a visitor or a user to view all the products, as well as sort products by character. Prices are listed and users, if in a rush, can buy a product on this page by pressing the button or click on the product name or image to find out more information.
 
 ### Product Detail Page 
 
-![product detail page](media/product_detail_section.png)
+![product detail page](docs/images/product_detail_section.png)
 
 This shows the product in detail, the description, technical details, being able to add a review, and also any related images for the user to browse. 
 
 ### Shopping Bag Page 
 
-![shopping bag page](media/shoppingbagpage.png)
+![shopping bag page](docs/images/shoppingbagpage.png)
 
 This shows the shopping bag page for the amount of items the user has in the bag, allowing the user to change quantity of the iterms or to checkout securely. 
 
@@ -91,7 +91,7 @@ This shows the shopping bag page for the amount of items the user has in the bag
 
 ### Colour Scheme 
 
-![Characafe Palette](media/characafe%20palette.png)
+![Characafe Palette](docs/images/characafe%20palette.png)
 The colour scheme for Characafe was derived from a poster of a Sanrio character, as I wanted the colour scheme to be cute but still good for accessibility purposes, with a variety of colours. 
 
 ### Typography 
@@ -139,7 +139,7 @@ _Checkout Page_
 
 ### Data Schema 
 
-![lucidchart screenshot](media/Characafe%20ERD.png)
+![lucidchart screenshot](docs/images/Characafe%20ERD.png)
 [Lucidchart](https://www.lucidchart.com/pages) was for the data schema for Characafe which uses a relational model, as illustrated in the Entity Relationship Diagram (ERD) provided. Above is an Entity Relationship Diagram that shows the key models and their fields.
 
 

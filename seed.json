@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "name": "Perri",
-    "image": "media/characters/perri_mpypyw",
+    "image": "fixtures/media/characters/perri_mpypyw",
     "description": "Perri works for a travel magazine, and loves going to new places! By plane, ferry or train - Perri also enjoys the journey too",
     "birthday": "2025-03-04",
     "colour": "Green",
@@ -17,7 +17,7 @@
   "pk": 2,
   "fields": {
     "name": "Carroto",
-    "image": "media/characters/carroto_fvkhef",
+    "image": "fixtures/media/characters/carroto_fvkhef",
     "description": "A cool carrot, Carroto loves long motorbike rides by the sea, leather jackets and sunglasses. But he has a soft side too!",
     "birthday": "2024-09-10",
     "colour": "Orange",
@@ -30,7 +30,7 @@
   "pk": 3,
   "fields": {
     "name": "Cherrin",
-    "image": "media/characters/cherrin_hlurye",
+    "image": "fixtures/media/characters/cherrin_hlurye",
     "description": "Funny and charming, Cherrin loves making jokes and watching comedies!",
     "birthday": "2025-05-20",
     "colour": "Red",
@@ -43,7 +43,7 @@
   "pk": 4,
   "fields": {
     "name": "Brocco",
-    "image": "media/characters/brocco_clwexf",
+    "image": "fixtures/media/characters/brocco_clwexf",
     "description": "Always active, Brocco usually gets up early with the sunrise!",
     "birthday": "2025-01-27",
     "colour": "Charteuse",
@@ -56,7 +56,7 @@
   "pk": 5,
   "fields": {
     "name": "Banoffi",
-    "image": "media/characters/banoffi_pxffa5",
+    "image": "fixtures/media/characters/banoffi_pxffa5",
     "description": "A lover of crafts, Banoffi can make all kinds of things!",
     "birthday": "2025-08-18",
     "colour": "Yellow",
@@ -69,7 +69,7 @@
   "pk": 1,
   "fields": {
     "name": "Carroto's Carrot Cake",
-    "image": "media/menu_items/carrotcake_xdwxbn",
+    "image": "fixtures/media/menu_items/carrotcake_xdwxbn",
     "description": "Take a bite of this classic, moist carrot cake with our cool guy, Carroto on top of the icing!"
   }
 },
@@ -78,7 +78,7 @@
   "pk": 2,
   "fields": {
     "name": "Cherrin Shirley Temple",
-    "image": "media/menu_items/360_F_939278290_YPow2YGlxJWQWsP125zJcimNpeVcZ3RY_uf6jcd",
+    "image": "fixtures/media/menu_items/360_F_939278290_YPow2YGlxJWQWsP125zJcimNpeVcZ3RY_uf6jcd",
     "description": "Cool off with this delicious take on the classic Shirley Temple - topped off with a maraschino cherry cut to look like Cherrin"
   }
 },
@@ -87,7 +87,7 @@
   "pk": 3,
   "fields": {
     "name": "Brocco's Broccoli Cheesebake",
-    "image": "media/menu_items/Broccoli-Casserole_ygpr3o",
+    "image": "fixtures/media/menu_items/Broccoli-Casserole_ygpr3o",
     "description": "A filling creamy and cheesy broccoli cheesebake that Brocco adores"
   }
 },
@@ -96,7 +96,7 @@
   "pk": 4,
   "fields": {
     "name": "Banoffi Smoothie",
-    "image": "media/menu_items/pineapple-banana-smoothie-5_uq2ddi",
+    "image": "fixtures/media/menu_items/pineapple-banana-smoothie-5_uq2ddi",
     "description": "Enjoy the creamy and nutritious smoothie with banana and coconut!"
   }
 },
@@ -105,7 +105,7 @@
   "pk": 5,
   "fields": {
     "name": "Perri's Chicken Caesar Salad",
-    "image": "media/menu_items/pexels-alleksana-6107787_u1ehxj",
+    "image": "fixtures/media/menu_items/pexels-alleksana-6107787_u1ehxj",
     "description": "Perri's favourite meal - a chicken caesar salad topped off with croutons, cherry tomatoes, and caesar dressing"
   }
 },
@@ -113,7 +113,7 @@
   "model": "products.product",
   "pk": 1,
   "fields": {
-    "image": "media/products/perrimug_afwyiw",
+    "image": "fixtures/media/products/perrimug_afwyiw",
     "name": "Perri Mug",
     "slug": "perri-mug",
     "description": "Enjoy a delicious drink in this cute mug featuring Perri!",
@@ -129,7 +129,7 @@
   "model": "products.product",
   "pk": 2,
   "fields": {
-    "image": "media/products/perrikeychain_cra9xf",
+    "image": "fixtures/media/products/perrikeychain_cra9xf",
     "name": "Perri Keychain",
     "slug": "perri-keychain",
     "description": "Add sparkle to your bag or outfit with this adorable acrylic keychain featuring Perri",
@@ -145,7 +145,7 @@
   "model": "products.product",
   "pk": 3,
   "fields": {
-    "image": "media/products/perritumbler_cu8usb",
+    "image": "fixtures/media/products/perritumbler_cu8usb",
     "name": "Perri Tumbler",
     "slug": "perri-tumbler",
     "description": "This will soon become a favourite for any drink with the sparkle added by Perri",
@@ -161,7 +161,7 @@
   "model": "products.product",
   "pk": 4,
   "fields": {
-    "image": "media/products/carrotomug_uasbou",
+    "image": "fixtures/media/products/carrotomug_uasbou",
     "name": "Carroto Mug",
     "slug": "carroto-mug",
     "description": "Be as cool as Carroto every morning with this mug!",
@@ -177,7 +177,7 @@
   "model": "products.product",
   "pk": 5,
   "fields": {
-    "image": "media/products/carrotokeychain_xejrbj",
+    "image": "fixtures/media/products/carrotokeychain_xejrbj",
     "name": "Carroto Keychain",
     "slug": "carroto-keychain",
     "description": "An acrylic keychain featuring Carroto",
@@ -193,7 +193,7 @@
   "model": "products.product",
   "pk": 6,
   "fields": {
-    "image": "media/products/utensils_lfea82",
+    "image": "fixtures/media/products/utensils_lfea82",
     "name": "Carroto Utensils",
     "slug": "carroto-utensils",
     "description": "Brighten every meal with this Carroto cutlery set",
@@ -209,7 +209,7 @@
   "model": "products.product",
   "pk": 7,
   "fields": {
-    "image": "media/products/cherrinmug_c0m8gi",
+    "image": "fixtures/media/products/cherrinmug_c0m8gi",
     "name": "Cherrin Mug",
     "slug": "cherrin-mug",
     "description": "Have a nice cup of jo from this cute mug with Cherri",
@@ -225,7 +225,7 @@
   "model": "products.product",
   "pk": 8,
   "fields": {
-    "image": "media/products/cherrinutensils_qqdvw2",
+    "image": "fixtures/media/products/cherrinutensils_qqdvw2",
     "name": "Cherrin Utensils",
     "slug": "cherrin-utensils",
     "description": "Brighten every meal with this Cherrin cutlery set",
@@ -241,7 +241,7 @@
   "model": "products.product",
   "pk": 9,
   "fields": {
-    "image": "media/products/cherrinbadge_zamfjz",
+    "image": "fixtures/media/products/cherrinbadge_zamfjz",
     "name": "Cherrin Badge",
     "slug": "cherrin-badge",
     "description": "Perfect to add cuteness to your badge or outfit",
@@ -257,7 +257,7 @@
   "model": "products.product",
   "pk": 10,
   "fields": {
-    "image": "media/products/banoffitumbler_ypqmgu",
+    "image": "fixtures/media/products/banoffitumbler_ypqmgu",
     "name": "Banoffi Tumbler",
     "slug": "banoffi-tumbler",
     "description": "This will soon become a favourite for any drink with the sparkle added by Banoffi",
@@ -273,7 +273,7 @@
   "model": "products.product",
   "pk": 11,
   "fields": {
-    "image": "media/products/banoffiutensils_og2vgh",
+    "image": "fixtures/media/products/banoffiutensils_og2vgh",
     "name": "Banoffi Utensils",
     "slug": "banoffi-utensils",
     "description": "Brighten every meal with this Banoffi cutlery set",
@@ -289,7 +289,7 @@
   "model": "products.product",
   "pk": 12,
   "fields": {
-    "image": "media/products/banoffikeychain_ek4dw4",
+    "image": "fixtures/media/products/banoffikeychain_ek4dw4",
     "name": "Banoffi Keychain",
     "slug": "banoffi-keychain",
     "description": "Add sparkle to your bag or outfit with this adorable acrylic keychain featuring Banoffi",
@@ -305,7 +305,7 @@
   "model": "products.product",
   "pk": 13,
   "fields": {
-    "image": "media/products/broccotumbler_jt7vnu",
+    "image": "fixtures/media/products/broccotumbler_jt7vnu",
     "name": "Brocco Tumbler",
     "slug": "brocco-tumbler",
     "description": "This will soon become a favourite for any drink with the sparkle added by Brocco",
@@ -321,7 +321,7 @@
   "model": "products.product",
   "pk": 14,
   "fields": {
-    "image": "media/products/broccomug_rfmu9c",
+    "image": "fixtures/media/products/broccomug_rfmu9c",
     "name": "Brocco Mug",
     "slug": "brocco-mug",
     "description": "Have a nice cup of jo from this cute mug with Brocco",
@@ -339,7 +339,7 @@
   "model": "products.product",
   "pk": 15,
   "fields": {
-    "image": "media/products/broccoutensils_ogqngp",
+    "image": "fixtures/media/products/broccoutensils_ogqngp",
     "name": "Brocco Utensils",
     "slug": "brocco-utensils",
     "description": "Brighten every meal with this Brocco cutlery set",

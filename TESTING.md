@@ -25,7 +25,7 @@
 
 [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) was used to test the performance of the website.
 
-![screenshot of google lighthouse desktop score](media/mainpagelighthouse.png)
+![screenshot of google lighthouse desktop score](docs/images/mainpagelighthouse.png)
 
 The main limitation was file sizes - particularly since this is an e-commerce website since users could in the future can upload files which are quite large. In future, attempts will be made to limit 
 
@@ -120,21 +120,21 @@ Automated testing was not completed for this project.
 
 ### User Stories Testing 
 
-| As a shopper I can view products so that I can select a product to buy                                                   | ![products page screenshot](media/shoppage.png)              |
+| As a shopper I can view products so that I can select a product to buy                                                   | ![products page screenshot](docs/images/shoppage.png)              |
 |--------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
-| As a shopper I can view specific details of the product, including the description, details, price                       | ![product detail page](media/product_detail_section.png)     |
-| As a shopper I can see my cart and no. of products on all pages so that avoid adding too much                            | ![shopping bag page](media/shoppingbagpage.png)              |
-| As a site owner, I want shoppers to have the ability to add to bag even when on the main products page for easy shopping | ![products page screenshot](media/shoppage.png)              |
-| As a shopper, I would like to get a notification from the site when I add products, remove product, update the quantity  | ![toast notification](products/toastbag.png)                 |
+| As a shopper I can view specific details of the product, including the description, details, price                       | ![product detail page](docs/images/product_detail_section.png)     |
+| As a shopper I can see my cart and no. of products on all pages so that avoid adding too much                            | ![shopping bag page](docs/images/shoppingbagpage.png)              |
+| As a site owner, I want shoppers to have the ability to add to bag even when on the main products page for easy shopping | ![products page screenshot](docs/images/shoppage.png)              |
+| As a shopper, I would like to get a notification from the site when I add products, remove product, update the quantity  | ![toast notification](docs/images/toastbag.png)                 |
 | As a user, I would like to create a wishlist so I favourite products I'd like to buy in the future                       | Yes                                                          |
 | As a user, I'd like to see what goods are added to the wishlist                                                          | Yes                                                          |
-| As a shopper I'd like to see similar products to the product I am looking at                                             | ![similar products section](media/similarproducts.png)       |
+| As a shopper I'd like to see similar products to the product I am looking at                                             | ![similar products section](docs/images/similarproducts.png)       |
 | As a shopper I would like to be able to check out using a secure method for payment                                      | Yes                                                          |
-| As a visitor, I would like to see a list of all the characters                                                           | ![character display screenshot](media/character-section.png) |
-| As a visitor to the site, I would like to see what goods are associated with the characters                              | ![character display screenshot](media/character-section.png) |
-| as a visitor I'd like to add reviews to a product and see reviews                                                        | ![reviews section](media/reviews.png)                        |
-| As a user, I would like to see my previous order history                                                                 | ![order history](media/order-history.png)                   |
-| As a user, I'd like to see where the cafe is located and its opening hours                                               | ![front page location section](media/location-section.png)   |
+| As a visitor, I would like to see a list of all the characters                                                           | ![character display screenshot](docs/images/character-section.png) |
+| As a visitor to the site, I would like to see what goods are associated with the characters                              | ![character display screenshot](docs/images/character-section.png) |
+| as a visitor I'd like to add reviews to a product and see reviews                                                        | ![reviews section](docs/images/reviews.png)                        |
+| As a user, I would like to see my previous order history                                                                 | ![order history](docs/images/order-history.png)                   |
+| As a user, I'd like to see where the cafe is located and its opening hours                                               | ![front page location section](docs/images/location-section.png)   |
 
 ## Features Testing 
 |                         **Home   Page**                         |            |

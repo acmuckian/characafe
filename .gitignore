@@ -18,6 +18,9 @@ staticfiles/
 media/
 *.log
 
+# Fixtures (seed data - keep in git)
+!fixtures/
+
 # Editor/IDE
 .vscode/
 .idea/
