@@ -222,3 +222,11 @@ else:
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 
+# SECURITY: ensure a strong SECRET_KEY is provided in production
+if 'DEVELOPMENT' not in os.environ:
+    if not SECRET_KEY or SECRET_KEY.startswith('django-insecure-') or len(SECRET_KEY) < 50:
+        raise RuntimeError(
+            'Insecure SECRET_KEY. Set a long, random SECRET_KEY in the environment for production.'
+        )
+
+
