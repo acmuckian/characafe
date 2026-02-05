@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.contrib.auth.models import User
 from home.models import Character
 
 # Create your models here.
@@ -12,7 +11,7 @@ class Product(models.Model):
         max_length=200, unique=True, blank=False, null=False)
     slug = models.SlugField(max_length=200, unique=True, blank=True)
     description = models.TextField(
-        max_length=1000, unique=True, blank=False, null=False)
+        max_length=1000, blank=False, null=False)
     details = models.TextField(
         max_length=1000, unique=False, blank=False, null=False, default="")
     price = models.DecimalField(max_digits=6, decimal_places=2)
