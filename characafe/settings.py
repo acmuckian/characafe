@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import dj_database_url
 import os
+import sys
 if os.path.isfile('env.py'):
     import env
 
@@ -223,7 +224,8 @@ else:
 
 
 # SECURITY: ensure a strong SECRET_KEY is provided in production
-if 'DEVELOPMENT' not in os.environ:
+# Skip this enforcement during collectstatic so builds (e.g. Heroku) can run without a full prod env.
+if 'DEVELOPMENT' not in os.environ and 'collectstatic' not in sys.argv:
     if not SECRET_KEY or SECRET_KEY.startswith('django-insecure-') or len(SECRET_KEY) < 50:
         raise RuntimeError(
             'Insecure SECRET_KEY. Set a long, random SECRET_KEY in the environment for production.'
