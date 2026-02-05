@@ -1,5 +1,25 @@
+# Local environment and secrets
 env.py
+.env
+.venv/
+
+# Database
 *.sqlite3
+db.sqlite3
+
+# Python
+__pycache__/
 *.pyc
-__pycache__
-.venv
+*.pyo
+*.pyd
+
+# Django
+staticfiles/
+media/
+*.log
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
