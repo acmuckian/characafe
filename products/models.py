@@ -35,7 +35,7 @@ class Comment(models.Model):
     commenter = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name="comments")
-    created_on = created_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     body = models.TextField(
         max_length=1000, blank=False, null=False, default="")
