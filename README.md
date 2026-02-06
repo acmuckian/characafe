@@ -1,6 +1,6 @@
 # Characafe
 
-![Characafe on amiresponsive.dev](characafe-amiresponsive.png)
+![Characafe on amiresponsive.dev](docs/images/characafe-amiresponsive.png)
 
 [Vist the live website.](https://characafe-1eb4a9dff267.herokuapp.com/)
 
