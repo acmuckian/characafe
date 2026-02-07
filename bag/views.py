@@ -42,8 +42,8 @@ def adjust_qty(request, item_id):
     else:
         bag.pop(item_id, None)
         messages.success(request, f'Removed {product.name} from your bag')
-        request.session['bag'] = bag
-        return redirect(reverse('shopping_bag'))
+    request.session['bag'] = bag
+    return redirect(reverse('shopping_bag'))
 
 
 def remove_from_bag(request, item_id):

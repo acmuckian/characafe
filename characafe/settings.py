@@ -14,6 +14,11 @@ from pathlib import Path
 import dj_database_url
 import os
 import sys
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 if os.path.isfile('env.py'):
     import env
 
