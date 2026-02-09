@@ -286,6 +286,11 @@ p {
     font-family: var(--body-font);
 }
 
+.loginregister .errorlist,
+.loginregister .errorlist li {
+    color: crimson !important;
+}
+
 /* css for characters page */
 
 .character-card-container {
@@ -554,7 +559,9 @@ option {
 .bag-table th {
     font-family: var(--nav-font);
     color: #78695F;
+    background-color:#FCFCC0;
 }
+
 
 .checkout {
     background-color: #F5D3C2;
@@ -784,10 +791,24 @@ option {
     font-family: var(--nav-font);
 }
 
+/* contact page css */
+
+#contact-form label.form-label,
+.contact-us .form-label {
+    font-family: var(--body-font) !important;
+    color: #78695F !important;
+}
+.contact-us .form-label.requiredField {
+    font-weight:900; 
+}
+
+
 @media only screen and (max-width: 400px) {
     #logout img {
         height: 1cap;
     }
+
+
 }
 
 

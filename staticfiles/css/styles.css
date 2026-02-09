@@ -33,8 +33,7 @@ body {
     background-position: 0% 0%;
     width: 100%;
     background-attachment: scroll;
-    margin-top: auto;
-    margin: auto;
+    margin-top:auto;
     text-align: center;
     color: #78695F;
 }
@@ -134,9 +133,7 @@ p {
 
 #character-section {
     background: #F2DEE4;
-
     padding: 10px;
-    margin: 5px;
 }
 
 .carousel-control-prev-icon,
@@ -208,15 +205,18 @@ p {
 
 #location img {
     float: left;
+    max-height:200px;
 }
-
+#location h2 {
+    color:#FCFCC0; 
+}
 #location ul {
     text-decoration: none;
     border: 2px solid #78695F;
 }
 
 #location li {
-    text-decoration: none;
+    list-style-type: none;
 }
 
 @keyframes menuitemchange {
@@ -286,6 +286,11 @@ p {
     font-family: var(--body-font);
 }
 
+.loginregister .errorlist,
+.loginregister .errorlist li {
+    color: crimson !important;
+}
+
 /* css for characters page */
 
 .character-card-container {
@@ -299,6 +304,7 @@ p {
     max-width: 100%;
     text-align: center;
     margin: 10px;
+    height:620px;
 }
 
 h3 {
@@ -425,7 +431,7 @@ h3 {
     background-color: #F8FBF7;
     padding: 5px;
     border-radius: 50px;
-    border-color: #F5D3C2 3px solid;
+    border: #F5D3C2 3px solid;
     position: relative;
     right: calc(-100% + 50px);
     top: -50px;
@@ -517,6 +523,10 @@ option {
     color: #F3BF93;
 }
 
+.comment-section h4 {
+    color:#78695F; 
+}
+
 .shop-now-bg {
     background-color: #F5D3C2;
     font-size: 1.3rem;
@@ -549,7 +559,9 @@ option {
 .bag-table th {
     font-family: var(--nav-font);
     color: #78695F;
+    background-color:#FCFCC0;
 }
+
 
 .checkout {
     background-color: #F5D3C2;
@@ -779,10 +791,20 @@ option {
     font-family: var(--nav-font);
 }
 
+/* contact page css */
+
+#contact-form label.form-label,
+.contact-us .form-label {
+    font-family: var(--menu-font) !important;
+    color: #78695F !important;
+}
+
 @media only screen and (max-width: 400px) {
     #logout img {
         height: 1cap;
     }
+
+
 }
 
 

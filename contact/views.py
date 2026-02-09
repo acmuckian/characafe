@@ -18,5 +18,7 @@ def contact_us(request):
             form.save()
             return redirect(reverse("contact") + "?contacted=1")
     return render(request, "contact/contact.html", {
-        "contact_form": ContactForm(),
+        "contact_form": ContactForm(prefix="contact"),
+        "newsletter_form": NewsletterForm(prefix="newsletter"),
     })
+
