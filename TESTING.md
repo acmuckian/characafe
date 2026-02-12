@@ -233,3 +233,4 @@ Automated testing was not completed for this project.
 | The   footer was not behaving on the log-out or register pages | The base.html wraps the block   content in a div with the .container class, so an extra .container class   disrupted the footer being pushed to the bottom                  |
 | users could not verify their emails                            | The confirm_email html had been   amended and the logic removed, so there was no form POST feature to let the   site know the user verified their email - this was resolved |
 | server 500 error when updating bag quantity | this was because the update bag code when quantity was above 0 (which was always) never set the session as that was under the else logic, so it was changed so the session persisted and the redirect happened in all cases |
+| when a product is added to the wishlist, an s appears | on toast_info.html, a stray s was added after the div tags and was removed |
