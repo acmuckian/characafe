@@ -32,7 +32,7 @@
             <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="10000">
                 <img src="{{ character.image.url }}" class="d-block w-50 mx-auto" alt="{{ character.name }}">
                 <div class="carousel-caption d-md-block">
-                    <h5><a href="{% url 'characters' %}">{{ character.name }}</a></h5>
+                    <h3><a href="{% url 'characters' %}">{{ character.name }}</a></h3>
                     <div class="carouselcaption mx-auto">{{ character.description }}</div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
 
             <div class="col-lg-4 col-md-4 mb-4 col-sm-12">
                 <img class="rounded-img" src="{{ menuitem.image.url }}" loading="lazy" alt="{{ menuitem.name }}">
-                <h5 class="menu-title"> {{ menuitem.name }}</h5>
+                <h3 class="menu-title"> {{ menuitem.name }}</h3>
                 <small class="menu-text"> {{ menuitem.description }} </small>
 
             </div>
@@ -76,7 +76,7 @@
         <p>Situated in the heart of Dublin, please come and check out our charming cafe!</p>
         <p><i class="fa-solid fa-location-dot"></i> 21 Hawkins Street, Dublin 2, D02 W3D5</p>
         <div class="opening w-50 mx-auto">
-            <h5 class="text-center">Opening Hours</h5>
+            <h3 class="text-center">Opening Hours</h3>
             <ul class="mx-auto">
 
                 <li class="text-center">Monday - Friday: 10 - 6</li>

@@ -420,8 +420,10 @@ h3 {
     margin: 5px;
 }
 
-.product-title {
-    font-family:var(--menu-font);
+.product-card .product-title,
+.product-card .product-title a {
+  font-family: var(--menu-font) !important;
+    font-size: 1.2rem;
 }
 
 .product-card h5 {

@@ -420,6 +420,12 @@ h3 {
     margin: 5px;
 }
 
+.product-card .product-title,
+.product-card .product-title a {
+  font-family: var(--menu-font) !important;
+    font-size: 1.2rem;
+}
+
 .product-card h5 {
     color: #78695F;
     font-family: var(--menu-font);
@@ -795,9 +801,13 @@ option {
 
 #contact-form label.form-label,
 .contact-us .form-label {
-    font-family: var(--menu-font) !important;
+    font-family: var(--body-font) !important;
     color: #78695F !important;
 }
+.contact-us .form-label.requiredField {
+    font-weight:900; 
+}
+
 
 @media only screen and (max-width: 400px) {
     #logout img {
