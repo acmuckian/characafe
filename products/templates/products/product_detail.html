@@ -138,7 +138,7 @@
                 <a href="{% url 'product_detail' related_product.slug %}"><img src="{{ related_product.image.url }}"
                         class="card-img-top" alt="{{ related_product.description }}"></a>
                 <div class="product-card-body">
-                    <h5 class="card-title"><a href="{% url 'product_detail' product.slug %}">{{ related_product.name }}</a> </h5>
+                    <div class="card-title" id="product-title"><a href="{% url 'product_detail' product.slug %}">{{ related_product.name }}</a> </div>
                     <small><i class="fa-regular fa-star"></i> {{ related_product.rating }}</small>
                     <p class="card-text"> €{{ related_product.price }} </p>
                     {% if related_product.available %}

@@ -420,6 +420,10 @@ h3 {
     margin: 5px;
 }
 
+.product-title {
+    font-family:var(--menu-font);
+}
+
 .product-card h5 {
     color: #78695F;
     font-family: var(--menu-font);

@@ -63,8 +63,8 @@
                 {% endif %}
                 {% endif %}
                 <div class="product-card-body">
-                    <h5 class="card-title"> <a href="{% url 'product_detail' product.slug %}">{{ product.name }} </a>
-                    </h5>
+                    <div class="card-title product-title"> <a href="{% url 'product_detail' product.slug %}">{{ product.name }} </a>
+                    </div>
                     <small><i class="fa-regular fa-star"></i> {{ product.rating }}</small>
                     <p class="card-text"> €{{ product.price }}</p>
                     {% if product.available %}
