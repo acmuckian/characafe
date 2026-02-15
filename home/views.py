@@ -24,6 +24,7 @@ class CharacterList(generic.ListView):
     template_name = "home/characters.html"
     paginate_by = 6
     context_object_name = 'characters'
+    ordering = ['name', 'pk']
 
 
 class MenuItemList(generic.ListView):

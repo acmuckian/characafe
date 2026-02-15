@@ -20,17 +20,17 @@
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="character-card-container">
                 <img src="{{ character.image.url }}" class="character-rounded-img" alt="{{ character.name }}">
-                <h3> {{character.name }}</h3>
+                <h2> {{character.name }}</h2>
                 <p> {{ character.description }} </p>
                 <small> <i class="fa-solid fa-cake-candles"></i> {{ character.birthday }} </small>
                 <br>
                 <a href="{% url 'products' %}?character={{ character.name }}" class="btn chara-btn">Goods</a>
                 <div class="interests">
-                    <h5><i class="fa-solid fa-heart"></i>Likes<i class="fa-solid fa-heart"></i></h5>
+                    <h3><i class="fa-solid fa-heart"></i>Likes<i class="fa-solid fa-heart"></i></h3>
                     <ul class="mx-auto">
                         <li class="mx-auto"> {{ character.likes }} </li>
                     </ul>
-                    <h5><i class="fa-solid fa-heart-crack"></i>Dislikes<i class="fa-solid fa-heart-crack"></i></h5>
+                    <h3><i class="fa-solid fa-heart-crack"></i>Dislikes<i class="fa-solid fa-heart-crack"></i></h3>
                     <ul class="mx-auto">
                         <li class="mx-auto">{{ character.dislikes }}</li>
                     </ul>

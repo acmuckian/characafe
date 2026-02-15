@@ -104,6 +104,10 @@ No errors on the javascript in the product_detail or products pages.
 
 - _models.py_ - no errors found 
 - _views.py_ - no errors found 
+- _admin.py_ - no errors found
+- _context_processors.py_ - no errors found
+- _urls.py_ - no errors found
+- _apps.py_ - no errors found
 
 **Contact** 
 

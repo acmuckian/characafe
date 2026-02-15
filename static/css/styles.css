@@ -307,7 +307,7 @@ p {
     height:620px;
 }
 
-h3 {
+.character-card-container h2 {
     font-family: var(--nav-font);
     color: #FCFCC0;
 }
@@ -365,7 +365,7 @@ h3 {
 
 }
 
-.interests h5 {
+.interests h3 {
     font-size: 1.2rem;
     padding: 2px;
 }
