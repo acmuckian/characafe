@@ -14,7 +14,7 @@ def subscribe(request):
         form = NewsletterForm(request.POST, prefix="newsletter")
         if form.is_valid():
             form.save()
-            messages.success(request, "You subscribed to our newsletter!")
+            messages.info(request, "You subscribed to our newsletter!")
             next_url = request.POST.get("next") or request.META.get("HTTP_REFERER") or reverse("contact")
             # Fix: pass allowed_hosts as None to allow same domain
             if not url_has_allowed_host_and_scheme(next_url, allowed_hosts=None, require_https=request.is_secure()):
@@ -35,7 +35,7 @@ def contact_us(request):
         contact_form = ContactForm(request.POST, prefix="contact")
         if contact_form.is_valid():
             contact_form.save()
-            messages.success(request, "Thank you for contacting us, we'll be in touch soon!")
+            messages.info(request, "Thank you for contacting us, we'll be in touch soon!")
             return redirect(reverse("contact") + "?contacted=1")
     
     return render(request, "contact/contact.html", {

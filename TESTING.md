@@ -147,7 +147,7 @@ Automated testing was not completed for this project.
 | Clicking   Characafe brings up home page                        | Yes        |
 | clicking   contact leads to contact page                        | Yes        |
 | clicking   menu leads to menu page                              | Yes        |
-| clicking   menu leads to characters page                        | Yes        |
+| clicking   characters leads to characters page                        | Yes        |
 | navbar   shows username when logged in                          | Yes        |
 | dropdown   beside avatar shows profile, wishlist and logout     | Yes        |
 | click   logout goes to logout page                              | Yes        |
@@ -167,7 +167,7 @@ Automated testing was not completed for this project.
 | **Shop   Main Page**                                                            |            |
 |---------------------------------------------------------------------------------|------------|
 | **Feature**                                                                     | **Status** |
-| Adding   product to wishlist notifies you it was added                          | Yes        |
+| Adding   product to wishlist notifies you it was added (when logged in)                         | Yes        |
 | adding   product to bag updates the bag                                         | Yes        |
 | adding   product to bag notifies that it was added                              | Yes        |
 | adding   product to bag notification shows you a summary of what is in the bag  | Yes        |
