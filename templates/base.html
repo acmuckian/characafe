@@ -89,17 +89,10 @@
                         </a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item"><a href="{% url 'profile' %}"></a>{{ username }}</li>
+                    <li class="nav-item"><a href="{% url 'profile' %}"></a>{{ user.username }}</li>
                     <li class="nav-item dropdown" id="profile-dropdown">
                         <a href="#" class="nav-link dropdown-toggle avatar-dropdown" data-bs-toggle="dropdown"
                             role="button" aria-expanded="false">
-                            {% if user.profile and user.profile.avatar %}
-                            <img src="{{ user.profile.avatar.url }}" alt="Avatar" id="navbar-avatar" class="navbar-icon"
-                                style="height:70px;" loading="lazy">
-                            {% else %}
-                            <img src="{% static 'images/default-pic.png' %}" alt="Default Avatar" id="navbar-avatar"
-                                class="navbar-icon" style="height:70px;" loading="lazy">
-                            {% endif %}
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
                             <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
