@@ -35,59 +35,26 @@
                 <button type="submit" class="btn btn-secondary">Submit</button>
             </form>
         </div>
-        <!--- subscribe modal -->
-        <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="submitModalLabel">Thanks for subscribing!</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>You have been subscribed to the newsletter.</p>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        
+{% endblock content %}
 
-<!--- contact modal -->
-<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Thanks for your message</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p> Thanks for contacting us. We'll be in touch soon!</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+{% block postloadjs %}
+{{ block.super }}
 {% if request.GET.contacted == "1" %}
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var modal = new bootstrap.Modal(document.getElementById('contactModal'));
-        modal.show();
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    var modal = new bootstrap.Modal(document.getElementById('contactModal'));
+    modal.show();
+});
 </script>
 {% endif %}
 
 {% if request.GET.subscribed == "1" %}
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var modal = new bootstrap.Modal(document.getElementById('subscribeModal'));
-        modal.show();
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    var modal = new bootstrap.Modal(document.getElementById('subscribeModal'));
+    modal.show();
+});
 </script>
 {% endif %}
-
-{% endblock content %}
+{% endblock %}

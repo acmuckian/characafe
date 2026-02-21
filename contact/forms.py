@@ -9,6 +9,11 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ['name', 'subject', 'email', 'body', ]
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Name'}),
+            'subject': forms.TextInput(attrs={'placeholder': 'Subject line'}),
+        }
+
 
 
 class NewsletterForm(forms.ModelForm):
