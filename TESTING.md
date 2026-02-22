@@ -88,16 +88,24 @@ No errors on the javascript in the product_detail or products pages.
 - _signals.py_ - no errors found 
 - _views.py_ - no errors found
 
+**characafe**
+
+- _urls.py_ - all clear, no errors found
+
 **Products** 
 
 - _admin.py_ - no errors found
+- apps.py - all clear, no errors found 
 - _forms.py_ - no errors found 
 - _models.py_ - no errors found
+- urls.py - all clear, no errors found
 - _views.py_ - no errors found 
 
 **Bag**
 
-- _views.py - no errors found
+- _contexts.py_ - all clear, no errors found 
+- _urls.py_ - all clear, no errors found 
+- _views.py_ - no errors found
 
 
 **Home**
@@ -114,6 +122,16 @@ No errors on the javascript in the product_detail or products pages.
 - _forms.py_ - no errors found
 - _models.py_ - no errors found 
 - _views.py_ - no errors found 
+
+**profiles**
+
+- admin.py - all clear, no errors found
+- apps.py - all clear, no errors found
+- forms.py - all clear, no errors found
+- models.py - all clear, no errors found
+- urls.py - all clear, no errors found
+- views.py - all clear, no errors found
+
 ## Testing 
 
 ### Automated Testing 
