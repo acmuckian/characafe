@@ -6,8 +6,8 @@ from .models import Profile
 from products.models import Product
 from checkout.models import Order
 
-# Create your views here.
-@login_required 
+
+@login_required
 def profile(request):
     user_wishlist = Product.objects.filter(wishlist=request.user)
     profile = get_object_or_404(Profile, user=request.user)
@@ -27,6 +27,7 @@ def profile(request):
     }
 
     return render(request, template, context)
+
 
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)

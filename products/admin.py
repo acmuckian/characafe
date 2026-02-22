@@ -15,5 +15,6 @@ class ProductAdmin(admin.ModelAdmin):
 
     ordering = ('slug',)
 
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Comment)

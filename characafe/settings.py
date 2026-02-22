@@ -23,7 +23,6 @@ if os.path.isfile('env.py'):
     import env
 
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,8 +34,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# SECURITY WARNING: don't run with debug turned on in production!
-# Only enable DEBUG if the DEBUG environment variable is explicitly set to 'True'.
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
@@ -67,7 +64,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'bag',
-    'checkout', 
+    'checkout',
     'profiles',
     'contact'
 ]
@@ -117,21 +114,21 @@ TEMPLATES = [
 
 
 AUTHENTICATION_BACKENDS = [
-
-    # Needed to login by username in Django admin, regardless of `allauth`
+    # Needed to login by username in Django admin
     'django.contrib.auth.backends.ModelBackend',
-
-    # `allauth` specific authentication methods, such as login by email
+    # `allauth` specific authentication methods
     'allauth.account.auth_backends.AuthenticationBackend',
-
 ]
+
 SITE_ID = 1
 
-
-
-
 ACCOUNT_LOGIN_METHODS = {'email', 'username'}
-ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*', 'password2*'] 
+ACCOUNT_SIGNUP_FIELDS = [
+    'username*',
+    'email*',
+    'password1*',
+    'password2*'
+]
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
@@ -145,9 +142,11 @@ WSGI_APPLICATION = 'characafe.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.parse(
+            os.environ.get('DATABASE_URL')
+        )
     }
-else: 
+else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -157,52 +156,61 @@ else:
 
 
 # Password validation
-# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'UserAttributeSimilarityValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'NumericPasswordValidator'
+        ),
     },
 ]
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/5.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STORAGES = {
-    "default": { "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage" },
-    "staticfiles": { "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage" },
+    "default": {
+        "BACKEND": (
+            "cloudinary_storage.storage.MediaCloudinaryStorage"
+        )
+    },
+    "staticfiles": {
+        "BACKEND": (
+            "whitenoise.storage.CompressedManifestStaticFilesStorage"
+        )
+    },
 }
 
 MEDIA_URL = '/media/'
@@ -215,6 +223,7 @@ STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'characafe@example.com'
@@ -228,24 +237,45 @@ else:
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 
-# SECURITY: ensure a strong SECRET_KEY is provided in production
-# Skip this enforcement during collectstatic so builds (e.g. Heroku) can run without a full prod env.
-if 'DEVELOPMENT' not in os.environ and 'collectstatic' not in sys.argv:
-    if not SECRET_KEY or SECRET_KEY.startswith('django-insecure-') or len(SECRET_KEY) < 50:
+# SECURITY: ensure a strong SECRET_KEY in production
+# Skip enforcement during collectstatic
+if (
+    'DEVELOPMENT' not in os.environ
+    and 'collectstatic' not in sys.argv
+):
+    if (
+        not SECRET_KEY
+        or SECRET_KEY.startswith('django-insecure-')
+        or len(SECRET_KEY) < 50
+    ):
         raise RuntimeError(
-            'Insecure SECRET_KEY. Set a long, random SECRET_KEY in the environment for production.'
+            'Insecure SECRET_KEY. Set a long, random SECRET_KEY '
+            'in the environment for production.'
         )
     # HSTS and SSL redirect
-    SECURE_HSTS_SECONDS = int(os.getenv('SECURE_HSTS_SECONDS', 31536000))
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = os.getenv('SECURE_HSTS_INCLUDE_SUBDOMAINS', 'True') == 'True'
-    SECURE_HSTS_PRELOAD = os.getenv('SECURE_HSTS_PRELOAD', 'True') == 'True'
-    SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', 'True') == 'True'
+    SECURE_HSTS_SECONDS = int(
+        os.getenv('SECURE_HSTS_SECONDS', 31536000)
+    )
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = (
+        os.getenv('SECURE_HSTS_INCLUDE_SUBDOMAINS', 'True') == 'True'
+    )
+    SECURE_HSTS_PRELOAD = (
+        os.getenv('SECURE_HSTS_PRELOAD', 'True') == 'True'
+    )
+    SECURE_SSL_REDIRECT = (
+        os.getenv('SECURE_SSL_REDIRECT', 'True') == 'True'
+    )
     # Cookie security
-    SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE', 'True') == 'True'
-    CSRF_COOKIE_SECURE = os.getenv('CSRF_COOKIE_SECURE', 'True') == 'True'
-
+    SESSION_COOKIE_SECURE = (
+        os.getenv('SESSION_COOKIE_SECURE', 'True') == 'True'
+    )
+    CSRF_COOKIE_SECURE = (
+        os.getenv('CSRF_COOKIE_SECURE', 'True') == 'True'
+    )
     # Extra protections
-    SECURE_BROWSER_XSS_FILTER = os.getenv('SECURE_BROWSER_XSS_FILTER', 'True') == 'True'
-    SECURE_CONTENT_TYPE_NOSNIFF = os.getenv('SECURE_CONTENT_TYPE_NOSNIFF', 'True') == 'True'
-
-
+    SECURE_BROWSER_XSS_FILTER = (
+        os.getenv('SECURE_BROWSER_XSS_FILTER', 'True') == 'True'
+    )
+    SECURE_CONTENT_TYPE_NOSNIFF = (
+        os.getenv('SECURE_CONTENT_TYPE_NOSNIFF', 'True') == 'True'
+    )

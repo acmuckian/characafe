@@ -15,7 +15,6 @@ class ContactForm(forms.ModelForm):
         }
 
 
-
 class NewsletterForm(forms.ModelForm):
     """
     Form for subscribing to the newsletter

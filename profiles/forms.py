@@ -1,6 +1,7 @@
 from django import forms
 from .models import Profile
 
+
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
@@ -23,7 +24,7 @@ class ProfileForm(forms.ModelForm):
         self.fields['default_phone_number'].widget.attrs['autofocus'] = True
 
         for field in self.fields:
-            if field != 'default_country':  # Skip country dropdown
+            if field != 'default_country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
                 else:
@@ -31,7 +32,8 @@ class ProfileForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
                 self.fields[field].widget.attrs['class'] = 'profile-form-input'
                 self.fields[field].label = False
-        
-        
-        self.fields['default_country'].widget.attrs['class'] = 'profile-form-input'
+
+        self.fields['default_country'].widget.attrs['class'] = (
+            'profile-form-input'
+        )
         self.fields['default_country'].label = False

@@ -130,10 +130,10 @@ Automated testing was not completed for this project.
 | As a shopper I can see my cart and no. of products on all pages so that avoid adding too much                            | ![shopping bag page](docs/images/shoppingbagpage.png)              |
 | As a site owner, I want shoppers to have the ability to add to bag even when on the main products page for easy shopping | ![products page screenshot](docs/images/shoppage.png)              |
 | As a shopper, I would like to get a notification from the site when I add products, remove product, update the quantity  | ![toast notification](docs/images/toastbag.png)                 |
-| As a user, I would like to create a wishlist so I favourite products I'd like to buy in the future                       | Yes                                                          |
-| As a user, I'd like to see what goods are added to the wishlist                                                          | Yes                                                          |
+| As a user, I would like to create a wishlist so I favourite products I'd like to buy in the future                       |                      ![add to wishlist button](docs/images/addtowishlist.png)             |
+| As a user, I'd like to see what goods are added to the wishlist                                                          | ![wishlist section](docs/images/wishlist-section.png)                                                                  |
 | As a shopper I'd like to see similar products to the product I am looking at                                             | ![similar products section](docs/images/similarproducts.png)       |
-| As a shopper I would like to be able to check out using a secure method for payment                                      | Yes                                                          |
+| As a shopper I would like to be able to check out using a secure method for payment                                      | ![secure checkout button](docs/images/secure-checkout.png)  ![secure checkout by stripe](docs/images/secure-checkout-card.png)                                                 |
 | As a visitor, I would like to see a list of all the characters                                                           | ![character display screenshot](docs/images/character-section.png) |
 | As a visitor to the site, I would like to see what goods are associated with the characters                              | ![character display screenshot](docs/images/character-section.png) |
 | as a visitor I'd like to add reviews to a product and see reviews                                                        | ![reviews section](docs/images/reviews.png)                        |
@@ -217,7 +217,7 @@ Automated testing was not completed for this project.
 | billing   info shows the amount, delivery fee, grand total                                                       | Yes        |
 | clicking   rest of range button brings to product page                                                           | Yes        |
 
-| **User   Registratiom**                                                                     |            |
+| **User   Registration**                                                                     |            |
 |---------------------------------------------------------------------------------------------|------------|
 | **Feature**                                                                                 | **Status** |
 | When   registering, the user gets a page to state an email is being sent for   verification | Yes        |
@@ -227,6 +227,15 @@ Automated testing was not completed for this project.
 | Only   logged in users can see the wishlist icons                                           | Yes        |
 | Only   logged in users can see their own profile/order history                              | Yes        |
 | Logging   out logs out user successfully                                                    | Yes        |
+
+| **Profile   Page**                                                 |            |
+|---------------------------------------------------------------------|------------|
+| **Feature**                                                         | **Status** |
+| Can see   order history                                             | Yes        |
+| Can see   products added to wishlist in "my wishlist"               | Yes        |
+| Can add   a wishlist product to bag with add to bag button          | Yes        |
+| can   update information such as street, town, postcode and country | Yes        |
+| successfully   updating this information prompts a notification     | Yes        |
 
 ## Bugs 
 
