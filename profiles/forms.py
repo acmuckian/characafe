@@ -1,5 +1,7 @@
 from django import forms
 from .models import Profile
+from allauth.account.forms import SignupForm
+from django.contrib.auth.models import User
 
 
 class ProfileForm(forms.ModelForm):
@@ -37,3 +39,17 @@ class ProfileForm(forms.ModelForm):
             'profile-form-input'
         )
         self.fields['default_country'].label = False
+
+
+class CustomSignupForm(SignupForm):
+    """
+    Custom signup form that validates unique email before sending
+    verification email.
+    """
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError(
+                'A user with that email already exists.'
+            )
+        return email
