@@ -171,7 +171,7 @@ Automated testing was not completed for this project.
 | click   logout goes to logout page                              | Yes        |
 | clicking   profile goes to profile page                         | Yes        |
 | clicking   shopping bag icon shows bag page                     | Yes        |
-| **carousel  **                                                  |            |
+| **carousel**                                                  |            |
 | clicking   right on the carousel shows next slide               | Yes        |
 | clicking   right on the carousel shows slide before             | Yes        |
 | carousel   moves independently                                  | Yes        |
@@ -233,7 +233,7 @@ Automated testing was not completed for this project.
 | told   correct amount charged                                                                                    | Yes        |
 | side   column shows my orders, the product, name, quantity, sub-total and the total                              | Yes        |
 | successful   details completion triggers loading overlay and checkout success page                               | Yes        |
-| **Checkout   Success Page **                                                                                     |            |
+| **Checkout   Success Page**                                                                                     |            |
 | toast   shows my order no and that confirmation email sent                                                       | Yes        |
 | order   shows my delivery information as I inserted it                                                           | Yes        |
 | billing   info shows the amount, delivery fee, grand total                                                       | Yes        |
