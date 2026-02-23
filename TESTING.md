@@ -259,6 +259,16 @@ Automated testing was not completed for this project.
 | can   update information such as street, town, postcode and country | Yes        |
 | successfully   updating this information prompts a notification     | Yes        |
 
+| **Miscellaneous   Pages**                                           |            |
+|---------------------------------------------------------------------|------------|
+| **Features**                                                        | **Status** |
+| **Menu Page**                                                       |            |
+| images spin when hoovered over                                      | Yes        |
+| **Characters Page**                                                 |            |
+| clicking goods tab on a character's card brings to their products | Yes        |
+| **Wishlist Page**                                                   |            |
+| Users   can add the products on their wishlist to their bag         | Yes        |
+| Users can see what is on their   wishlist                           | Yes        |
 
 ## Bugs 
 
