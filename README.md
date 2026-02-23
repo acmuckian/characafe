@@ -139,7 +139,7 @@ _Checkout Page_
 
 ### Data Schema 
 
-![lucidchart screenshot](docs/images/Characafe%20ERD.png)
+![lucidchart screenshot](docs/images/characafe-ERD.png)
 [Lucidchart](https://www.lucidchart.com/pages) was for the data schema for Characafe which uses a relational model, as illustrated in the Entity Relationship Diagram (ERD) provided. Above is an Entity Relationship Diagram that shows the key models and their fields.
 
 
