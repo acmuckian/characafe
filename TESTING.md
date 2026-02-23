@@ -175,12 +175,13 @@ Automated testing was not completed for this project.
 | clicking   right on the carousel shows next slide               | Yes        |
 | clicking   right on the carousel shows slide before             | Yes        |
 | carousel   moves independently                                  | Yes        |
-| **menu  **                                                      |            |
+| **menu**                                                      |            |
 | menu   icons spin when hovered over                             | Yes        |
 | **footer**                                                      |            |
 | clicking   social media icons open social media page in new tab | Yes        |
 | can't   subscribe unless you enter text                         | Yes        |
 | can't   subscribe without entering an email address             | Yes        |
+| subscribing leads to subscribed toast | Yes |
 
 | **Shop   Main Page**                                                            |            |
 |---------------------------------------------------------------------------------|------------|
@@ -219,6 +220,9 @@ Automated testing was not completed for this project.
 | Clicking   on a related product image brings user to product's home page | Yes        |
 | Unable   to add to bag for unavailable products                          | Yes        |
 | Adding   to wishlist notifies you it was added to wishlist               | Yes        |
+| Removing from wishlist notifies you it was removed from wishlist	| Yes |
+| Visitors can see if there are any comments |	Yes |
+| The correct quantity of the product is added to the bag |	Yes |
 
 | **Checkout   Page**                                                                                              |            |
 |------------------------------------------------------------------------------------------------------------------|------------|
@@ -254,6 +258,7 @@ Automated testing was not completed for this project.
 | Can add   a wishlist product to bag with add to bag button          | Yes        |
 | can   update information such as street, town, postcode and country | Yes        |
 | successfully   updating this information prompts a notification     | Yes        |
+
 
 ## Bugs 
 
